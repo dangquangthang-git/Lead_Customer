@@ -124,7 +124,7 @@
                 <configuration>
                     <!-- Run TestNG xml file -->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/CLOUD_BROWSERSTACK.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/lead_Customer.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
                     <!-- Argument -->

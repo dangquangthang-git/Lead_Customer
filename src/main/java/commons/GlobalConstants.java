@@ -6,5 +6,8 @@ public class GlobalConstants {
     public static final String EXTENT_PATH = PROJECT_PATH + SEPARATOR + "htmlExtent" + SEPARATOR;
     public static final String JAVA_VERSION = System.getProperty("java.version");
 
+    public static final long SHORT_TIMEOUT = 10;
+    public static final long LONG_TIMEOUT = 30;
+
 
 }

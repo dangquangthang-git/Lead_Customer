@@ -5,9 +5,9 @@
 <!--        <listener class-name="commons.MethodListener"></listener>-->
 <!--    </listeners>-->
 
-<!--    <parameter name="url" value=""></parameter>-->
+    <parameter name="url" value="https://github.com/dangquangthang-git/Lead_Customer/tree/master/src/main/java/pageObjects"></parameter>
     <test name="Run on Chrome">
-<!--        <parameter name="browser" value="chrome"></parameter>-->
+        <parameter name="browser" value="chrome"></parameter>
         <classes>
             <class name="company.Testcase_Lead_Customer"/>
         </classes>

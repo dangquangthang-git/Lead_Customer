@@ -100,7 +100,7 @@ public class BasePage {
     }
 
     public void sendkeyToElement(WebDriver driver, String locator, String keyToSend) {
-        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
+        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "staticVariables", Keys.BACK_SPACE));
         getElement(driver, locator).sendKeys(keyToSend);
     }
 

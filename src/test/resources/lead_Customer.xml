@@ -5,9 +5,9 @@
 <!--        <listener class-name="commons.MethodListener"></listener>-->
 <!--    </listeners>-->
 
-    <parameter name="url" value="https://id-uat.ipas.com.vn/login"></parameter>
+    <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>
     <test name="Run on Chrome">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value="HCHROME"></parameter>
         <classes>
             <class name="company.Testcase_Lead_Customer"/>
         </classes>

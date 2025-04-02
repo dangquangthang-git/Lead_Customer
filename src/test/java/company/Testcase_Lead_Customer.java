@@ -23,6 +23,6 @@ public class Testcase_Lead_Customer extends BaseTest {
 
     @AfterTest
     public void after() {
-        driver.close();
+//        driver.close();
     }
 }

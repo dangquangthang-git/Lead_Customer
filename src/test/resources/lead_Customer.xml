@@ -5,7 +5,7 @@
 <!--        <listener class-name="commons.MethodListener"></listener>-->
 <!--    </listeners>-->
 
-    <parameter name="url" value="https://github.com/dangquangthang-git/Lead_Customer/tree/master/src/main/java/pageObjects"></parameter>
+    <parameter name="url" value="https://id-uat.ipas.com.vn/login"></parameter>
     <test name="Run on Chrome">
         <parameter name="browser" value="chrome"></parameter>
         <classes>

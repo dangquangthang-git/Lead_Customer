@@ -370,4 +370,14 @@ public class BasePage {
         return by;
     }
 
+    public Set<Cookie> getAllCookies(WebDriver driver) {
+        return driver.manage().getCookies();
+    }
+
+    public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+        for (Cookie cookie : cookies) {
+            driver.manage().addCookie(cookie);
+        }
+        sleepInSecond(3);
+    }
 }

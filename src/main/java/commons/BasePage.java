@@ -8,7 +8,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class BasePage {
@@ -144,6 +147,35 @@ public class BasePage {
 
     public String getElementAttribute(WebDriver driver, String locator, String attributeName, String... resParameter) {
         return getElement(driver, castParameter(locator, resParameter)).getAttribute(attributeName);
+    }
+
+    public static String getPhoneGenerate() {
+        Random random = new Random();
+        return "096942" + String.format("%04d", random.nextInt(10000)); // Đảm bảo là 4 chữ số
+    }
+
+    protected static String getEmailGenerate(String prefix) {
+        Random random = new Random();
+        return prefix + random.nextInt(9999) + "@gmail.com";
+    }
+
+    public static String getTomorrow() {
+        LocalDate tomorrow = LocalDate.now().plusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return tomorrow.format(formatter);
+    }
+
+    public static String getRandomName() {
+        String[] firstNames = {"Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Phan"};
+        String[] middleNames = {"Văn", "Thị", "Hữu", "Minh", "Đức", "Ngọc"};
+        String[] lastNames = {"An", "Bình", "Hạnh", "Khánh", "Tú", "Trang", "Quân"};
+
+        Random random = new Random();
+        String first = firstNames[random.nextInt(firstNames.length)];
+        String middle = middleNames[random.nextInt(middleNames.length)];
+        String last = lastNames[random.nextInt(lastNames.length)];
+
+        return first + " " + middle + " " + last;
     }
 
     public void sleepInSecond(long sleep) {

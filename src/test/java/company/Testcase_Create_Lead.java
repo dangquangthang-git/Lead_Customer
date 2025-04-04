@@ -16,15 +16,35 @@ public class Testcase_Create_Lead extends BaseTest {
     public void before() {
         driver = Testcase_Login.driver;
         homePage = PageGenerator.getHomePage(driver);
-        System.out.println("Cookies: done");
     }
 
     @Test
-    public void TC01_User_Lead_Page() {
+    public void TC01_User_Create_Lead_Individual() {
         leadPage = homePage.moveToTabLead();
-        leadPage.searchByLeadName(staticVars.leadData.leadName);
-        leadPage.searchByAddress(staticVars.leadData.leadAddres);
+        leadPage.openCreateLeadPopUp();
+        leadPage.enterToFullNameTextBox(staticVars.leadData.fullName);
+        leadPage.enterToDOBTextBox(staticVars.leadData.dateOfBirth);
+        leadPage.selectMaleGenderRadioButton();
+        leadPage.enterToMobilePhoneTextBox(staticVars.leadData.mobilePhone);
+        leadPage.enterToEmailTextBox(staticVars.leadData.email);
+        leadPage.enterToAddressTextBox(staticVars.leadData.address);
+        leadPage.selectLeadSource(staticVars.leadData.leadSource);
+        leadPage.enterToDescryptionTextBox(staticVars.leadData.descryptionText);
+        leadPage.enterToMissionNameTextBox(staticVars.leadData.missionName);
+        leadPage.enterToMissionTimeTextBox(staticVars.leadData.missionTime);
+        leadPage.selectInteractChannel();
+        leadPage.enterMissionNoteTextBox(staticVars.leadData.missionNote);
+        leadPage.clickToSaveButton();
+
     }
+
+
+//    @Test
+//    public void TC01_User_Lead_Page() {
+//
+//        leadPage.searchByLeadName(staticVars.leadData.leadName);
+//        leadPage.searchByAddress(staticVars.leadData.leadAddres);
+//    }
 
     private LeadPO leadPage;
     private LoginPO loginPage;

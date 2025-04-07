@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -103,7 +104,7 @@ public class BasePage {
     }
 
     public void sendkeyToElement(WebDriver driver, String locator, String keyToSend) {
-        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "staticVariables", Keys.BACK_SPACE));
+        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         getElement(driver, locator).sendKeys(keyToSend);
     }
 
@@ -151,7 +152,21 @@ public class BasePage {
 
     public static String getPhoneGenerate() {
         Random random = new Random();
-        return "096942" + String.format("%04d", random.nextInt(10000)); // Đảm bảo là 4 chữ số
+        return "096942" + String.format("%04d", random.nextInt(10000));
+    }
+
+    public static String getHouseNumberGenerate() {
+        Random random = new Random();
+        return String.format("%03d", random.nextInt(999));
+    }
+
+    public static String generateTaskName() {
+
+        List<String> words = Arrays.asList("Kiểm tra", "Phân tích", "Lập trình", "Hỗ trợ", "Tối ưu", "Cải tiến", "Xử lý", "Đánh giá", "Phát triển", "Tạo mới");
+        Random rand = new Random();
+        String word1 = words.get(rand.nextInt(words.size()));
+        String word2 = words.get(rand.nextInt(words.size()));
+        return word1 + " " + word2;
     }
 
     protected static String getEmailGenerate(String prefix) {

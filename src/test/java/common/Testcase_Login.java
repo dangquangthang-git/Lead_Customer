@@ -1,9 +1,7 @@
 package common;
 
 import commons.BaseTest;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -12,8 +10,6 @@ import pageObjects.dsb.HomePO;
 import pageObjects.dsb.LeadPO;
 import pageObjects.dsb.LoginPO;
 import staticVariables.staticVars;
-
-import java.util.Set;
 
 public class Testcase_Login extends BaseTest {
     public static WebDriver driver;

@@ -1,16 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Automation Testing" verbose="1">
-
-<!--    <listeners>-->
-<!--        <listener class-name="commons.MethodListener"></listener>-->
-<!--    </listeners>-->
+    <!--    <listeners>-->
+    <!--        <listener class-name="commons.MethodListener"></listener>-->
+    <!--        <listener class-name="reportConfigs.ExtentListener"></listener>-->
+    <!--    </listeners>-->
 
     <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>
-    <test name="Run on Chrome">
+    <test name="Run on Chrome for Individual">
         <parameter name="browser" value="HCHROME"></parameter>
         <classes>
             <class name="common.Testcase_Login"/>
-            <class name="company.Testcase_Create_Lead"/>
+            <class name="company.individual.Testcase_Create_Individual_Lead"/>
+        </classes>
+    </test>
+    <test name="Run on Chrome for Organization">
+        <parameter name="browser" value="HCHROME"></parameter>
+        <classes>
+            <class name="company.organization.Testcase_Create_Organization_Lead"/>
         </classes>
     </test>
 </suite>

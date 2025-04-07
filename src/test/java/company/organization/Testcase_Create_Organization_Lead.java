@@ -20,10 +20,10 @@ public class Testcase_Create_Organization_Lead extends BaseTest {
     @Test
     public void TC01_User_Create_Lead_Organization() {
         leadPage.openOrganizationCreateLeadPopUp();
-        leadPage.enterToOrgaLeadNameTextBox();
-        leadPage.enterToRepresentativeTextBox();
-        leadPage.enterToMobilePhoneTextBox(staticVars.commonLeadData.mobilePhone);
-        leadPage.enterToEmailTextBox(staticVars.commonLeadData.email);
+        leadPage.enterToOrgaLeadNameTextBox(staticVars.organizationLeadData.leadOrgaName);
+        leadPage.enterToRepresentativeTextBox(staticVars.organizationLeadData.repName);
+        leadPage.enterToMobilePhoneTextBox(staticVars.organizationLeadData.organMobilePhone);
+        leadPage.enterToEmailTextBox(staticVars.organizationLeadData.organizationEmail);
         leadPage.enterToAddressTextBox(staticVars.commonLeadData.province, staticVars.commonLeadData.district, staticVars.commonLeadData.ward, staticVars.commonLeadData.specificAddress);
         leadPage.selectLeadSource(staticVars.commonLeadData.leadSource);
         leadPage.enterToDescryptionTextBox(staticVars.commonLeadData.descryptionText);

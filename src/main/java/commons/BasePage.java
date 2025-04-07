@@ -174,6 +174,11 @@ public class BasePage {
         return prefix + random.nextInt(9999) + "@gmail.com";
     }
 
+    protected static String getCompanyNameGenerate() {
+        Random random = new Random();
+        return "Công ty " + random.nextInt(9999);
+    }
+
     public static String getTomorrow() {
         LocalDate tomorrow = LocalDate.now().plusDays(1);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");

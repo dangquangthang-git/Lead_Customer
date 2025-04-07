@@ -130,10 +130,13 @@ public class LeadPO extends BasePage {
         clickToElement(driver, LeadPageUI.commonLeadInfo.SAVE_BUTTON);
     }
 
-    public void enterToOrgaLeadNameTextBox() {
-
+    public void enterToOrgaLeadNameTextBox(String leadOrgaName) {
+        waitForElementClickable(driver, LeadPageUI.organizationInfo.LEAD_ORGANAME_TEXTBOX);
+        sendkeyToElement(driver, LeadPageUI.organizationInfo.LEAD_ORGANAME_TEXTBOX, leadOrgaName);
     }
 
-    public void enterToRepresentativeTextBox() {
+    public void enterToRepresentativeTextBox(String repName) {
+        waitForElementClickable(driver, LeadPageUI.organizationInfo.REPRESENTATIVE_TEXTBOX);
+        sendkeyToElement(driver, LeadPageUI.organizationInfo.REPRESENTATIVE_TEXTBOX, repName);
     }
 }

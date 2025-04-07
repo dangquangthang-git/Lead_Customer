@@ -36,8 +36,8 @@ public class LeadPageUI {
     }
 
     public static class organizationInfo {
-        public static final String LEAD_ORGANAME_TEXTBOX="xpath=//div[@id='rc-tabs-6-panel-CORPORATE']//div[@class='Form__FormContainer-sc-q08i0n-1 fKvIYU']//form[@class='ivnd-form ivnd-form-vertical w-full']//div[@class='ivnd-row my-4']//div[@class='ivnd-col ivnd-col-12']//div[@class='ivnd-space ivnd-space-vertical w-full']//div[@class='ivnd-space-item']//div[@class='Form__Block-sc-q08i0n-0 lckPld']//div//input[@id='fullName']";
-        public static final String REPRESENTATIVE_TEXTBOX="xpath=//input[@id='representative']";
+        public static final String LEAD_ORGANAME_TEXTBOX = "xpath=//div[@class='Form__Block-sc-q08i0n-0 lckPld']//div//input[@id='fullName']";
+        public static final String REPRESENTATIVE_TEXTBOX = "xpath=//input[@id='representative']";
     }
 }
 

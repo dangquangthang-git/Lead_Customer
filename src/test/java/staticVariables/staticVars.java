@@ -10,7 +10,6 @@ public class staticVars extends BasePage {
 
     public static class commonLeadData {
         public static String mobilePhone = getPhoneGenerate();
-        public static String email = getEmailGenerate("email");
         public static final String address = "Quận Ba Đình, TP Hà Nội";
         public static final String leadSource = "Hội thảo";
         public static final String descryptionText = address;
@@ -27,6 +26,15 @@ public class staticVars extends BasePage {
     public static class individualLeadData {
         public static final String fullName = getRandomName();
         public static final String dateOfBirth = "21/04/1998";
+        public static String individualEmail = getEmailGenerate("individual");
+        public static String indiMobilePhone = getPhoneGenerate();
+    }
+
+    public static class organizationLeadData {
+        public static final String leadOrgaName = getCompanyNameGenerate();
+        public static final String repName = getRandomName();
+        public static String organizationEmail = getEmailGenerate("entrepreneur");
+        public static String organMobilePhone = getPhoneGenerate();
     }
 
 }

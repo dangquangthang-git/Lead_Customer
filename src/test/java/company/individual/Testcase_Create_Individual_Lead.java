@@ -26,8 +26,8 @@ public class Testcase_Create_Individual_Lead extends BaseTest {
         leadPage.enterToFullNameTextBox(staticVars.individualLeadData.fullName);
         leadPage.enterToDOBTextBox(staticVars.individualLeadData.dateOfBirth);
         leadPage.selectMaleGenderRadioButton();
-        leadPage.enterToMobilePhoneTextBox(staticVars.commonLeadData.mobilePhone);
-        leadPage.enterToEmailTextBox(staticVars.commonLeadData.email);
+        leadPage.enterToMobilePhoneTextBox(staticVars.individualLeadData.indiMobilePhone);
+        leadPage.enterToEmailTextBox(staticVars.individualLeadData.individualEmail);
         leadPage.enterToAddressTextBox(staticVars.commonLeadData.province, staticVars.commonLeadData.district, staticVars.commonLeadData.ward, staticVars.commonLeadData.specificAddress);
         leadPage.selectLeadSource(staticVars.commonLeadData.leadSource);
         leadPage.enterToDescryptionTextBox(staticVars.commonLeadData.descryptionText);

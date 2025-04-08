@@ -1,9 +1,7 @@
-package company;
+package common;
 
-import staticVariables.staticVars;
 import commons.BaseTest;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -11,9 +9,10 @@ import pageObjects.PageGenerator;
 import pageObjects.dsb.HomePO;
 import pageObjects.dsb.LeadPO;
 import pageObjects.dsb.LoginPO;
+import staticVariables.staticVars;
 
-public class Testcase_Lead_Customer extends BaseTest {
-    public WebDriver driver;
+public class Testcase_Login extends BaseTest {
+    public static WebDriver driver;
 
     @Parameters({"browser", "url"})
     @BeforeTest
@@ -29,26 +28,7 @@ public class Testcase_Lead_Customer extends BaseTest {
         loginPage.enterToPassword(staticVars.loginData.password);
         homePage = loginPage.clickToLoginButton();
     }
-
-    @Test
-    public void TC02_User_HomePage() {
-        leadPage = homePage.moveToTabLead();
-    }
-
-    @Test
-    public void TC03_User_Lead_Page() {
-        leadPage.searchByLeadName(staticVars.leadData.leadName);
-        leadPage.searchByAddress(staticVars.leadData.leadAddres);
-    }
-
-    @AfterTest
-    public void after() {
-        driver.close();
-    }
-
     private HomePO homePage;
     private LoginPO loginPage;
     private LeadPO leadPage;
-
-
 }

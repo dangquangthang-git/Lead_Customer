@@ -8,7 +8,11 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class BasePage {
@@ -100,7 +104,7 @@ public class BasePage {
     }
 
     public void sendkeyToElement(WebDriver driver, String locator, String keyToSend) {
-        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "staticVariables", Keys.BACK_SPACE));
+        getElement(driver, locator).sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.BACK_SPACE));
         getElement(driver, locator).sendKeys(keyToSend);
     }
 
@@ -144,6 +148,54 @@ public class BasePage {
 
     public String getElementAttribute(WebDriver driver, String locator, String attributeName, String... resParameter) {
         return getElement(driver, castParameter(locator, resParameter)).getAttribute(attributeName);
+    }
+
+    public static String getPhoneGenerate() {
+        Random random = new Random();
+        return "096942" + String.format("%04d", random.nextInt(10000));
+    }
+
+    public static String getHouseNumberGenerate() {
+        Random random = new Random();
+        return String.format("%03d", random.nextInt(999));
+    }
+
+    public static String generateTaskName() {
+
+        List<String> words = Arrays.asList("Kiểm tra", "Phân tích", "Lập trình", "Hỗ trợ", "Tối ưu", "Cải tiến", "Xử lý", "Đánh giá", "Phát triển", "Tạo mới");
+        Random rand = new Random();
+        String word1 = words.get(rand.nextInt(words.size()));
+        String word2 = words.get(rand.nextInt(words.size()));
+        return word1 + " " + word2;
+    }
+
+    protected static String getEmailGenerate(String prefix) {
+        Random random = new Random();
+        return prefix + random.nextInt(9999) + "@gmail.com";
+    }
+
+    protected static String getCompanyNameGenerate() {
+        Random random = new Random();
+        return "Công ty " + random.nextInt(9999);
+    }
+
+    public static String getTomorrow() {
+        LocalDate tomorrow = LocalDate.now().plusDays(1);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return tomorrow.format(formatter);
+    }
+
+    public static String getRandomName() {
+        String[] firstNames = {"Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Phan"};
+        String[] middleNames = {"Văn", "Thị", "Hữu", "Minh", "Đức", "Ngọc"};
+        String[] lastNames = {"An", "Bình", "Hạnh", "Khánh", "Tú", "Trang", "Quân"};
+
+        Random random = new Random();
+        String first = firstNames[random.nextInt(firstNames.length)];
+        String middle = middleNames[random.nextInt(middleNames.length)];
+        String last = lastNames[random.nextInt(lastNames.length)];
+
+        return first + " " + middle + " " + last;
     }
 
     public void sleepInSecond(long sleep) {
@@ -370,4 +422,14 @@ public class BasePage {
         return by;
     }
 
+    public Set<Cookie> getAllCookies(WebDriver driver) {
+        return driver.manage().getCookies();
+    }
+
+    public void setCookies(WebDriver driver, Set<Cookie> cookies) {
+        for (Cookie cookie : cookies) {
+            driver.manage().addCookie(cookie);
+        }
+        sleepInSecond(3);
+    }
 }

@@ -189,5 +189,7 @@ public class LeadPO extends BasePage {
         clickToElement(driver, LeadPageUI.filterSearch.ORGA_CHECKBOX);
         clickToElement(driver, LeadPageUI.filterSearch.CONNECTED_STATUS);
         clickToElement(driver, LeadPageUI.filterSearch.OPEN_DEAL_STATUS);
+        sleepInSecond(1);
+        clickToElement(driver,LeadPageUI.filterSearch.APPLY_FILTER);
     }
 }

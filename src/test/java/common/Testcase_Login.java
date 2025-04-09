@@ -19,7 +19,6 @@ public class Testcase_Login extends BaseTest {
     public void before(String browserName, String url) {
         driver = getBrowserDriver(browserName, url);
         loginPage = PageGenerator.getLoginPage(driver);
-
     }
 
     @Test

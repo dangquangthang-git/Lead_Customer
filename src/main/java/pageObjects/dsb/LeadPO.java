@@ -4,7 +4,11 @@ import commons.BasePage;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import pageUIs.LeadPageUI;
+
+import java.util.List;
 
 public class LeadPO extends BasePage {
     WebDriver driver;
@@ -18,17 +22,30 @@ public class LeadPO extends BasePage {
         sleepInSecond(4);
         waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME);
         sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME, leadName);
-        sleepInSecond(3);
-        clickToElement(driver, LeadPageUI.commonLeadInfo.CLEAR_LEAD_NAME);
+        sleepInSecond(5);
     }
 
     public void searchByAddress(String leadAddres) {
+        clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
         sleepInSecond(1);
         waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS);
         sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS, leadAddres);
-        sleepInSecond(3);
-        clickToElement(driver, LeadPageUI.commonLeadInfo.CLEAR_LEAD_ADDRESS);
-        sleepInSecond(2);
+        sleepInSecond(5);
+        clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS);
+        sleepInSecond(1);
+    }
+
+    public void assertName(String fieldResult) {
+        List<WebElement> nameList = getListElement(driver, LeadPageUI.filterSearch.TABLE_DATA_NAME);
+        for (WebElement element : nameList) {
+            Assert.assertEquals(element.getText(), fieldResult);
+        }
+    }
+    public void assertAddress(String fieldResult) {
+        List<WebElement> nameList = getListElement(driver, LeadPageUI.filterSearch.TABLE_DATA_ADDRESS);
+        for (WebElement element : nameList) {
+            Assert.assertEquals(element.getText(), fieldResult);
+        }
     }
 
     public void openIndividualCreateLeadPopUp() {

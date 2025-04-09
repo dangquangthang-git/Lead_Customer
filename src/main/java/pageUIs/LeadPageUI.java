@@ -4,11 +4,14 @@ public class LeadPageUI {
     public static class filterSearch {
         public static final String SEARCH_BY_NAME = "xpath=//input[@id='fullName']";
         public static final String SEARCH_BY_ADDRESS ="xpath=//input[@id='address']";
+        public static final String TABLE_DATA_NAME="xpath=//tr/td[@class='ivnd-table-cell'][2]";
+        public static final String TABLE_DATA_ADDRESS="xpath=//tr/td[@class='ivnd-table-cell'][4]";
+        public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
+        public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
     }
 
     public static class commonLeadInfo {
-        public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
-        public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
+
         public static final String CREATE_LEAD_BUTTON = "xpath=//span[contains(text(),'Tạo lead')]";
         public static final String INDIVIDUAL_LEAD_CREATE = "xpath=//span[text()='Cá nhân']";
         public static final String ORGANIZATION_LEAD_CREATE = "xpath=//span[text()='Tổ chức']";

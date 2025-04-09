@@ -8,15 +8,17 @@ public class LeadPageUI {
         public static final String TABLE_DATA_ADDRESS = "xpath=//tr/td[@class='ivnd-table-cell'][4]";
         public static final String TABLE_DATA_TYPE = "xpath=//tr/td[@class='ivnd-table-cell'][3]";
         public static final String TABLE_DATA_STATUS = "xpath=//tr/td[@class='ivnd-table-cell'][5]";
-
         public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String FILTER_ICON = "xpath=//img[@alt='filterIcon']";
+        public static final String APPLY_FILTER="xpath=//span[contains(text(),'Áp dụng')]";
         public static final String ORGA_CHECKBOX = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Tổ chức')]";
         public static final String INDIVIDUAL_CHECKBOX = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Cá nhân')]";
-        public static final String NEW_STATUS = "xpath=//span[normalize-space()='New']";
-        public static final String CONNECTED_STATUS = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Connected')]";
-        public static final String OPEN_DEAL_STATUS = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Open deal')]";
+        public static final String CHECKED_INDIVIDUAL_CHECKBOX="xpath=//label//span[normalize-space()='Cá nhân']";
+        public static final String NEW_STATUS = "xpath=//input[@value='NEW']";
+        public static final String CHECKED_NEW_STATUS = "xpath=//label[@class='ivnd-checkbox-wrapper ivnd-checkbox-wrapper-checked ivnd-checkbox-wrapper-in-form-item']//span[contains(text(),'New')]";
+        public static final String CONNECTED_STATUS = "xpath=//input[@value='CONNECTED']";
+        public static final String OPEN_DEAL_STATUS = "xpath=//input[@value='OPEN_DEAL']";
     }
 
     public static class commonLeadInfo {

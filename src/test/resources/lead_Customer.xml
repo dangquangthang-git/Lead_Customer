@@ -24,6 +24,7 @@
             <class name="common.Testcase_Search">
                 <methods>
                     <include name="TC02_User_Search_Organization"/>
+                    <include name="TC03_User_Filter"/>
                 </methods>
             </class>
         </classes>

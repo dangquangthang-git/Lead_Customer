@@ -36,9 +36,22 @@ public class LeadPO extends BasePage {
     }
 
     public void verifyResult(String column, String fieldResult) {
+        sleepInSecond(2);
         List<WebElement> nameList = getListElement(driver, column);
         for (WebElement element : nameList) {
             Assert.assertEquals(element.getText(), fieldResult);
+        }
+    }
+
+    public void verifyResults(String column, String fieldResult1, String fieldResult2) {
+        sleepInSecond(2);
+        List<WebElement> nameList = getListElement(driver, column);
+        for (WebElement element : nameList) {
+            String actualText = element.getText().trim();
+            Assert.assertTrue(
+                    actualText.equals(fieldResult1) || actualText.equals(fieldResult2),
+                    "❌ Mismatch: '" + actualText + "' không khớp với '" + fieldResult1 + "' hoặc '" + fieldResult2 + "'"
+            );
         }
     }
 
@@ -154,13 +167,27 @@ public class LeadPO extends BasePage {
     }
 
     public void clickToFilterIcon() {
-        waitForElementVisible(driver,LeadPageUI.filterSearch.FILTER_ICON);
-        clickToElement(driver,LeadPageUI.filterSearch.FILTER_ICON);
-    }
-    public void checkToIndividualAndNew() {
-        waitForElementClickable(driver,LeadPageUI.filterSearch.ORGA_CHECKBOX);
-        clickToElement(driver,LeadPageUI.filterSearch.ORGA_CHECKBOX);
-        clickToElement(driver,LeadPageUI.filterSearch.NEW_STATUS);
+        waitForElementVisible(driver, LeadPageUI.filterSearch.FILTER_ICON);
+        clickToElement(driver, LeadPageUI.filterSearch.FILTER_ICON);
+        sleepInSecond(1);
     }
 
+    public void checkToIndividualAndNew() {
+        waitForElementClickable(driver, LeadPageUI.filterSearch.INDIVIDUAL_CHECKBOX);
+        clickToElement(driver, LeadPageUI.filterSearch.INDIVIDUAL_CHECKBOX);
+        sleepInSecond(1);
+        clickToElement(driver, LeadPageUI.filterSearch.NEW_STATUS);
+        sleepInSecond(1);
+        clickToElement(driver,LeadPageUI.filterSearch.APPLY_FILTER);
+    }
+
+    public void checkToOrganizationAndOpendealAndConnected() {
+        sleepInSecond(1);
+        clickToElement(driver, LeadPageUI.filterSearch.CHECKED_INDIVIDUAL_CHECKBOX);
+        clickToElement(driver, LeadPageUI.filterSearch.CHECKED_NEW_STATUS);
+        waitForElementClickable(driver, LeadPageUI.filterSearch.ORGA_CHECKBOX);
+        clickToElement(driver, LeadPageUI.filterSearch.ORGA_CHECKBOX);
+        clickToElement(driver, LeadPageUI.filterSearch.CONNECTED_STATUS);
+        clickToElement(driver, LeadPageUI.filterSearch.OPEN_DEAL_STATUS);
+    }
 }

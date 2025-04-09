@@ -1,5 +1,6 @@
 package common;
 
+import commons.BasePage;
 import commons.BaseTest;
 import company.individual.Testcase_Create_Individual_Lead;
 import org.testng.annotations.BeforeClass;
@@ -35,10 +36,15 @@ public class Testcase_Search extends BaseTest {
     public void TC03_User_Filter() {
         leadPage.clickToFilterIcon();
         leadPage.checkToIndividualAndNew();
+        leadPage.clickToFilterIcon();
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_TYPE, "Cá nhân");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_STATUS, "New");
 
-
+        leadPage.clickToFilterIcon();
+        leadPage.checkToOrganizationAndOpendealAndConnected();
+        leadPage.clickToFilterIcon();
+        leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_TYPE, "Tổ chức");
+        leadPage.verifyResults(LeadPageUI.filterSearch.TABLE_DATA_STATUS, "Connected","Open deal");
     }
 
     private LeadPO leadPage;

@@ -28,6 +28,7 @@ public class Testcase_Login extends BaseTest {
         loginPage.enterToPassword(staticVars.loginData.password);
         homePage = loginPage.clickToLoginButton();
     }
+
     private HomePO homePage;
     private LoginPO loginPage;
     private LeadPO leadPage;

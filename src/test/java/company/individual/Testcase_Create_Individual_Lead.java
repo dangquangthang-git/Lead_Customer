@@ -2,6 +2,7 @@ package company.individual;
 
 import common.Testcase_Login;
 import commons.BaseTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObjects.PageGenerator;
@@ -11,7 +12,7 @@ import staticVariables.staticVars;
 
 
 public class Testcase_Create_Individual_Lead extends BaseTest {
-    @BeforeTest
+    @BeforeClass
     public void before() {
         driver = Testcase_Login.driver;
         homePage = PageGenerator.getHomePage(driver);
@@ -39,12 +40,7 @@ public class Testcase_Create_Individual_Lead extends BaseTest {
     }
 
 
-//    @Test
-//    public void TC01_User_Lead_Page() {
-//
-//        leadPage.searchByLeadName(staticVars.leadData.leadName);
-//        leadPage.searchByAddress(staticVars.leadData.leadAddres);
-//    }
+
 
     public static LeadPO leadPage;
     private HomePO homePage;

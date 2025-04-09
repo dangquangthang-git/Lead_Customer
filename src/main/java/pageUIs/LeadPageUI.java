@@ -1,9 +1,12 @@
 package pageUIs;
 
 public class LeadPageUI {
+    public static class filterSearch {
+        public static final String SEARCH_BY_NAME = "xpath=//input[@id='fullName']";
+        public static final String SEARCH_BY_ADDRESS ="xpath=//input[@id='address']";
+    }
+
     public static class commonLeadInfo {
-        public static final String SEARCH_NAME_TEXTBOX = "xpath=//input[@id='fullName']";
-        public static final String SEARCH_ADDRESS_TEXTBOX = "xpath=//input[@id='address']";
         public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String CREATE_LEAD_BUTTON = "xpath=//span[contains(text(),'Tạo lead')]";
@@ -39,5 +42,7 @@ public class LeadPageUI {
         public static final String LEAD_ORGANAME_TEXTBOX = "xpath=//div[@class='Form__Block-sc-q08i0n-0 lckPld']//div//input[@id='fullName']";
         public static final String REPRESENTATIVE_TEXTBOX = "xpath=//input[@id='representative']";
     }
+
+
 }
 

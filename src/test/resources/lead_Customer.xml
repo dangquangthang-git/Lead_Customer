@@ -11,12 +11,22 @@
         <classes>
             <class name="common.Testcase_Login"/>
             <class name="company.individual.Testcase_Create_Individual_Lead"/>
+            <class name="common.Testcase_Search">
+                <methods>
+                    <include name="TC01_User_Search_By_Name_Individual"/>
+                </methods>
+            </class>
         </classes>
     </test>
     <test name="Run on Chrome for Organization">
         <parameter name="browser" value="HCHROME"></parameter>
         <classes>
             <class name="company.organization.Testcase_Create_Organization_Lead"/>
+            <class name="common.Testcase_Search">
+                <methods>
+                    <include name="TC01_User_Search_By_Name_Organization"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

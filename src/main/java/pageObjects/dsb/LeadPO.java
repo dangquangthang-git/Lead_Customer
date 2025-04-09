@@ -15,16 +15,18 @@ public class LeadPO extends BasePage {
 
 
     public void searchByLeadName(String leadName) {
-        waitForElementClickable(driver, LeadPageUI.commonLeadInfo.SEARCH_NAME_TEXTBOX);
-        sendkeyToElement(driver, LeadPageUI.commonLeadInfo.SEARCH_NAME_TEXTBOX, leadName);
-        sleepInSecond(2);
+        sleepInSecond(4);
+        waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME);
+        sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME, leadName);
+        sleepInSecond(3);
         clickToElement(driver, LeadPageUI.commonLeadInfo.CLEAR_LEAD_NAME);
     }
 
     public void searchByAddress(String leadAddres) {
-        waitForElementClickable(driver, LeadPageUI.commonLeadInfo.SEARCH_ADDRESS_TEXTBOX);
-        sendkeyToElement(driver, LeadPageUI.commonLeadInfo.SEARCH_ADDRESS_TEXTBOX, leadAddres);
-        sleepInSecond(2);
+        sleepInSecond(1);
+        waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS);
+        sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS, leadAddres);
+        sleepInSecond(3);
         clickToElement(driver, LeadPageUI.commonLeadInfo.CLEAR_LEAD_ADDRESS);
         sleepInSecond(2);
     }

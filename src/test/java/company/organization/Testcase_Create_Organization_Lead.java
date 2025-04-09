@@ -2,6 +2,7 @@ package company.organization;
 
 import commons.BaseTest;
 import company.individual.Testcase_Create_Individual_Lead;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObjects.dsb.HomePO;
@@ -10,9 +11,8 @@ import pageObjects.dsb.LoginPO;
 import staticVariables.staticVars;
 
 public class Testcase_Create_Organization_Lead extends BaseTest {
-    @BeforeTest
+    @BeforeClass
     public void before() {
-
         leadPage = Testcase_Create_Individual_Lead.leadPage;
         System.out.println(leadPage);
     }

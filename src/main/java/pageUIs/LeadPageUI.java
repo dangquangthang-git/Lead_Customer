@@ -3,15 +3,23 @@ package pageUIs;
 public class LeadPageUI {
     public static class filterSearch {
         public static final String SEARCH_BY_NAME = "xpath=//input[@id='fullName']";
-        public static final String SEARCH_BY_ADDRESS ="xpath=//input[@id='address']";
-        public static final String TABLE_DATA_NAME="xpath=//tr/td[@class='ivnd-table-cell'][2]";
-        public static final String TABLE_DATA_ADDRESS="xpath=//tr/td[@class='ivnd-table-cell'][4]";
+        public static final String SEARCH_BY_ADDRESS = "xpath=//input[@id='address']";
+        public static final String TABLE_DATA_NAME = "xpath=//tr/td[@class='ivnd-table-cell'][2]";
+        public static final String TABLE_DATA_ADDRESS = "xpath=//tr/td[@class='ivnd-table-cell'][4]";
+        public static final String TABLE_DATA_TYPE = "xpath=//tr/td[@class='ivnd-table-cell'][3]";
+        public static final String TABLE_DATA_STATUS = "xpath=//tr/td[@class='ivnd-table-cell'][5]";
+
         public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
+        public static final String FILTER_ICON = "xpath=//img[@alt='filterIcon']";
+        public static final String ORGA_CHECKBOX = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Tổ chức')]";
+        public static final String INDIVIDUAL_CHECKBOX = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Cá nhân')]";
+        public static final String NEW_STATUS = "xpath=//span[normalize-space()='New']";
+        public static final String CONNECTED_STATUS = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Connected')]";
+        public static final String OPEN_DEAL_STATUS = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Open deal')]";
     }
 
     public static class commonLeadInfo {
-
         public static final String CREATE_LEAD_BUTTON = "xpath=//span[contains(text(),'Tạo lead')]";
         public static final String INDIVIDUAL_LEAD_CREATE = "xpath=//span[text()='Cá nhân']";
         public static final String ORGANIZATION_LEAD_CREATE = "xpath=//span[text()='Tổ chức']";

@@ -16,7 +16,6 @@ public class Testcase_Create_Individual_Lead extends BaseTest {
     public void before() {
         driver = Testcase_Login.driver;
         homePage = PageGenerator.getHomePage(driver);
-        System.out.println(driver);
     }
 
     @Test

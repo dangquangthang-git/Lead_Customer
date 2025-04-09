@@ -4,7 +4,6 @@
     <!--        <listener class-name="commons.MethodListener"></listener>-->
     <!--        <listener class-name="reportConfigs.ExtentListener"></listener>-->
     <!--    </listeners>-->
-
     <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>
     <test name="Run on Chrome for Individual">
         <parameter name="browser" value="HCHROME"></parameter>
@@ -13,7 +12,7 @@
             <class name="company.individual.Testcase_Create_Individual_Lead"/>
             <class name="common.Testcase_Search">
                 <methods>
-                    <include name="TC01_User_Search_By_Name_Individual"/>
+                    <include name="TC01_User_Search_Individual"/>
                 </methods>
             </class>
         </classes>
@@ -24,7 +23,7 @@
             <class name="company.organization.Testcase_Create_Organization_Lead"/>
             <class name="common.Testcase_Search">
                 <methods>
-                    <include name="TC01_User_Search_By_Name_Organization"/>
+                    <include name="TC02_User_Search_Organization"/>
                 </methods>
             </class>
         </classes>

@@ -35,14 +35,8 @@ public class LeadPO extends BasePage {
         sleepInSecond(1);
     }
 
-    public void assertName(String fieldResult) {
-        List<WebElement> nameList = getListElement(driver, LeadPageUI.filterSearch.TABLE_DATA_NAME);
-        for (WebElement element : nameList) {
-            Assert.assertEquals(element.getText(), fieldResult);
-        }
-    }
-    public void assertAddress(String fieldResult) {
-        List<WebElement> nameList = getListElement(driver, LeadPageUI.filterSearch.TABLE_DATA_ADDRESS);
+    public void verifyResult(String column, String fieldResult) {
+        List<WebElement> nameList = getListElement(driver, column);
         for (WebElement element : nameList) {
             Assert.assertEquals(element.getText(), fieldResult);
         }
@@ -158,4 +152,15 @@ public class LeadPO extends BasePage {
         waitForElementClickable(driver, LeadPageUI.organizationInfo.REPRESENTATIVE_TEXTBOX);
         sendkeyToElement(driver, LeadPageUI.organizationInfo.REPRESENTATIVE_TEXTBOX, repName);
     }
+
+    public void clickToFilterIcon() {
+        waitForElementVisible(driver,LeadPageUI.filterSearch.FILTER_ICON);
+        clickToElement(driver,LeadPageUI.filterSearch.FILTER_ICON);
+    }
+    public void checkToIndividualAndNew() {
+        waitForElementClickable(driver,LeadPageUI.filterSearch.ORGA_CHECKBOX);
+        clickToElement(driver,LeadPageUI.filterSearch.ORGA_CHECKBOX);
+        clickToElement(driver,LeadPageUI.filterSearch.NEW_STATUS);
+    }
+
 }

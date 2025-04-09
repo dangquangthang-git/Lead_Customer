@@ -5,6 +5,9 @@ import org.openqa.selenium.*;
 import org.testng.Assert;
 import pageUIs.LeadPageUI;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class LeadPO extends BasePage {
@@ -190,16 +193,40 @@ public class LeadPO extends BasePage {
         clickToElement(driver, LeadPageUI.filterSearch.APPLY_FILTER);
     }
 
-    public void uploadFile(String filePath) {
+    public void handleFile(String filePath, String savePath) throws AWTException {
         clickToElement(driver, LeadPageUI.commonLeadInfo.UPLOAD_BUTTON);
+        sleepInSecond(1);
+        clickToElement(driver, LeadPageUI.commonLeadInfo.DOWNLOAD_BUTTON);
+        handleSaveDialog(savePath);
         sleepInSecond(1);
         getElement(driver, LeadPageUI.commonLeadInfo.INPUT_FILE).sendKeys(filePath);
         sleepInSecond(1);
-        clickToElement(driver,LeadPageUI.commonLeadInfo.UPLOAD_SUBMIT);
+        clickToElement(driver, LeadPageUI.commonLeadInfo.UPLOAD_SUBMIT);
     }
 
     public void verifyUpload(String successMessage) {
-        sleepInSecond(1);
-        Assert.assertEquals(getElementText(driver,LeadPageUI.commonLeadInfo.UPLOAD_SUCCESS_MESSAGE),successMessage);
+        waitForElementVisible(driver, LeadPageUI.commonLeadInfo.UPLOAD_SUCCESS_MESSAGE);
+        Assert.assertEquals(getElementText(driver, LeadPageUI.commonLeadInfo.UPLOAD_SUCCESS_MESSAGE), successMessage);
+    }
+
+    public void handleSaveDialog(String savePath) throws AWTException {
+
+        Robot robot = new Robot();
+        robot.setAutoDelay(1000); // đợi hộp thoại xuất hiện
+
+        // Copy đường dẫn vào clipboard
+        StringSelection selection = new StringSelection(savePath);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+        // Dán (Ctrl + V)
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        // Nhấn Enter để lưu
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
     }
 }

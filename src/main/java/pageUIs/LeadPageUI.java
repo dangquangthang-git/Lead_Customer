@@ -44,6 +44,7 @@ public class LeadPageUI {
         public static final String ADDRESS_SAVE_BUTTON = "xpath=//button[@type='submit']";
         public static final String PROVINCE_OPTION = "xpath=//div[text()='TP Hà Nội']";
         public static final String UPLOAD_BUTTON = "xpath=//span[contains(text(),'Tải lên')]";
+        public static final String DOWNLOAD_BUTTON="xpath=//span[contains(text(),'Tải file mẫu')]";
         public static final String INPUT_FILE = "xpath=//input[@type='file']";
         public static final String UPLOAD_SUBMIT = "xpath=//span[contains(text(),'Xác nhận')]";
         public static final String UPLOAD_SUCCESS_MESSAGE = "xpath=//span[contains(text(),'Đã tải file lên thành công')]";

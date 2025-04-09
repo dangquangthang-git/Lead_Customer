@@ -1,6 +1,5 @@
 package common;
 
-import commons.BasePage;
 import commons.BaseTest;
 import commons.GlobalConstants;
 import company.individual.Testcase_Create_Individual_Lead;
@@ -10,6 +9,7 @@ import pageObjects.dsb.LeadPO;
 import pageUIs.LeadPageUI;
 import staticVariables.staticVars;
 
+import java.awt.*;
 import java.io.File;
 
 public class Testcase_Search extends BaseTest {
@@ -20,8 +20,10 @@ public class Testcase_Search extends BaseTest {
     }
 
     String leadInfo = "leadInfo.xlsx";
+    String saveFile="example.xlsx";
     String leadInfoPath = GlobalConstants.PROJECT_PATH + File.separator + "src\\main\\resources\\uploadFiles" + File.separator + leadInfo;
     String successMessage = "Đã tải file lên thành công";
+    String savePath = GlobalConstants.PROJECT_PATH + File.separator + "src\\main\\resources\\downloadFiles" + File.separator + saveFile;
 
     @Test
     public void TC01_User_Search_Individual() {
@@ -55,8 +57,8 @@ public class Testcase_Search extends BaseTest {
     }
 
     @Test
-    public void TC04_User_UploadFile() {
-        leadPage.uploadFile(leadInfoPath);
+    public void TC04_User_Download_UploadFile() throws AWTException {
+        leadPage.handleFile(leadInfoPath, savePath);
         leadPage.verifyUpload(successMessage);
     }
 

@@ -20,6 +20,10 @@ public class BaseTest {
     }
 
     protected WebDriver getBrowserDriver(String browserName, String url) {
+        String downloadFiles = GlobalConstants.PROJECT_PATH + File.separator + "src"
+                + File.separator + "main"
+                + File.separator + "resources"
+                + File.separator + "downloadFiles";
         BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
         switch (browserList) {
             case CHROME:
@@ -33,6 +37,9 @@ public class BaseTest {
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("credentials_enable_service", false);  // Tắt trình quản lý mật khẩu
                 prefs.put("profile.password_manager_enabled", false);  // Tắt popup lưu mật khẩu
+                prefs.put("download.default_directory", downloadFiles);
+                prefs.put("download.prompt_for_download", false);
+                prefs.put("safebrowsing.enabled", true);
                 options.setExperimentalOption("prefs", prefs);
                 driver = new ChromeDriver(options);
                 break;

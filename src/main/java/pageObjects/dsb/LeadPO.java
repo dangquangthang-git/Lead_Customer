@@ -212,19 +212,15 @@ public class LeadPO extends BasePage {
     public void handleSaveDialog(String savePath) throws AWTException {
 
         Robot robot = new Robot();
-        robot.setAutoDelay(1000); // đợi hộp thoại xuất hiện
-
-        // Copy đường dẫn vào clipboard
+        robot.setAutoDelay(1000);
         StringSelection selection = new StringSelection(savePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
 
-        // Dán (Ctrl + V)
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_CONTROL);
 
-        // Nhấn Enter để lưu
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 

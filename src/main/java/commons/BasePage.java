@@ -152,7 +152,7 @@ public class BasePage {
 
     public static String getPhoneGenerate() {
         Random random = new Random();
-        return "096942" + String.format("%04d", random.nextInt(10000));
+        return "09694" + String.format("%05d", random.nextInt(100000));
     }
 
     public static String getHouseNumberGenerate() {

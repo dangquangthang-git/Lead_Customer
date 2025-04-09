@@ -2,6 +2,7 @@ package common;
 
 import commons.BasePage;
 import commons.BaseTest;
+import commons.GlobalConstants;
 import company.individual.Testcase_Create_Individual_Lead;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -9,12 +10,18 @@ import pageObjects.dsb.LeadPO;
 import pageUIs.LeadPageUI;
 import staticVariables.staticVars;
 
+import java.io.File;
+
 public class Testcase_Search extends BaseTest {
     @BeforeClass
     public void before() {
         leadPage = Testcase_Create_Individual_Lead.leadPage;
         System.out.println(leadPage);
     }
+
+    String leadInfo = "leadInfo.xlsx";
+    String leadInfoPath = GlobalConstants.PROJECT_PATH + File.separator + "src\\main\\resources\\uploadFiles" + File.separator + leadInfo;
+    String successMessage = "Đã tải file lên thành công";
 
     @Test
     public void TC01_User_Search_Individual() {
@@ -44,7 +51,13 @@ public class Testcase_Search extends BaseTest {
         leadPage.checkToOrganizationAndOpendealAndConnected();
         leadPage.clickToFilterIcon();
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_TYPE, "Tổ chức");
-        leadPage.verifyResults(LeadPageUI.filterSearch.TABLE_DATA_STATUS, "Connected","Open deal");
+        leadPage.verifyResults(LeadPageUI.filterSearch.TABLE_DATA_STATUS, "Connected", "Open deal");
+    }
+
+    @Test
+    public void TC04_User_UploadFile() {
+        leadPage.uploadFile(leadInfoPath);
+        leadPage.verifyUpload(successMessage);
     }
 
     private LeadPO leadPage;

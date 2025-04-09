@@ -11,10 +11,10 @@ public class LeadPageUI {
         public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String FILTER_ICON = "xpath=//img[@alt='filterIcon']";
-        public static final String APPLY_FILTER="xpath=//span[contains(text(),'Áp dụng')]";
+        public static final String APPLY_FILTER = "xpath=//span[contains(text(),'Áp dụng')]";
         public static final String ORGA_CHECKBOX = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Tổ chức')]";
         public static final String INDIVIDUAL_CHECKBOX = "xpath=//label[contains(@class,'ivnd-checkbox-wrapper ivnd-checkbox-wrapper-in-form-item')]//span[contains(text(),'Cá nhân')]";
-        public static final String CHECKED_INDIVIDUAL_CHECKBOX="xpath=//label//span[normalize-space()='Cá nhân']";
+        public static final String CHECKED_INDIVIDUAL_CHECKBOX = "xpath=//label//span[normalize-space()='Cá nhân']";
         public static final String NEW_STATUS = "xpath=//input[@value='NEW']";
         public static final String CHECKED_NEW_STATUS = "xpath=//label[@class='ivnd-checkbox-wrapper ivnd-checkbox-wrapper-checked ivnd-checkbox-wrapper-in-form-item']//span[contains(text(),'New')]";
         public static final String CONNECTED_STATUS = "xpath=//input[@value='CONNECTED']";
@@ -43,6 +43,10 @@ public class LeadPageUI {
         public static final String SPECIFIC_ADDRESS = "xpath=//form[@class='ivnd-form ivnd-form-vertical flex-1']//input[@id='address']";
         public static final String ADDRESS_SAVE_BUTTON = "xpath=//button[@type='submit']";
         public static final String PROVINCE_OPTION = "xpath=//div[text()='TP Hà Nội']";
+        public static final String UPLOAD_BUTTON = "xpath=//span[contains(text(),'Tải lên')]";
+        public static final String INPUT_FILE = "xpath=//input[@type='file']";
+        public static final String UPLOAD_SUBMIT = "xpath=//span[contains(text(),'Xác nhận')]";
+        public static final String UPLOAD_SUCCESS_MESSAGE = "xpath=//span[contains(text(),'Đã tải file lên thành công')]";
     }
 
     public static class individualInfo {

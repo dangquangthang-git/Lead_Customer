@@ -1,10 +1,7 @@
 package pageObjects.dsb;
 
 import commons.BasePage;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import pageUIs.LeadPageUI;
 
@@ -22,7 +19,7 @@ public class LeadPO extends BasePage {
         sleepInSecond(4);
         waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME);
         sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME, leadName);
-        sleepInSecond(5);
+        sleepInSecond(3);
     }
 
     public void searchByAddress(String leadAddres) {
@@ -30,7 +27,7 @@ public class LeadPO extends BasePage {
         sleepInSecond(1);
         waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS);
         sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS, leadAddres);
-        sleepInSecond(5);
+        sleepInSecond(3);
         clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS);
         sleepInSecond(1);
     }
@@ -178,7 +175,7 @@ public class LeadPO extends BasePage {
         sleepInSecond(1);
         clickToElement(driver, LeadPageUI.filterSearch.NEW_STATUS);
         sleepInSecond(1);
-        clickToElement(driver,LeadPageUI.filterSearch.APPLY_FILTER);
+        clickToElement(driver, LeadPageUI.filterSearch.APPLY_FILTER);
     }
 
     public void checkToOrganizationAndOpendealAndConnected() {
@@ -190,6 +187,19 @@ public class LeadPO extends BasePage {
         clickToElement(driver, LeadPageUI.filterSearch.CONNECTED_STATUS);
         clickToElement(driver, LeadPageUI.filterSearch.OPEN_DEAL_STATUS);
         sleepInSecond(1);
-        clickToElement(driver,LeadPageUI.filterSearch.APPLY_FILTER);
+        clickToElement(driver, LeadPageUI.filterSearch.APPLY_FILTER);
+    }
+
+    public void uploadFile(String filePath) {
+        clickToElement(driver, LeadPageUI.commonLeadInfo.UPLOAD_BUTTON);
+        sleepInSecond(1);
+        getElement(driver, LeadPageUI.commonLeadInfo.INPUT_FILE).sendKeys(filePath);
+        sleepInSecond(1);
+        clickToElement(driver,LeadPageUI.commonLeadInfo.UPLOAD_SUBMIT);
+    }
+
+    public void verifyUpload(String successMessage) {
+        sleepInSecond(1);
+        Assert.assertEquals(getElementText(driver,LeadPageUI.commonLeadInfo.UPLOAD_SUCCESS_MESSAGE),successMessage);
     }
 }

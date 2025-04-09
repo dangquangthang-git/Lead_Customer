@@ -25,6 +25,7 @@
                 <methods>
                     <include name="TC02_User_Search_Organization"/>
                     <include name="TC03_User_Filter"/>
+                    <include name="TC04_User_UploadFile"/>
                 </methods>
             </class>
         </classes>

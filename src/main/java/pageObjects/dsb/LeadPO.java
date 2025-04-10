@@ -263,9 +263,10 @@ public class LeadPO extends BasePage {
         return getElementText(driver, LeadPageUI.filterSearch.TABLE_DATA_ID);
     }
 
-    public void closeInfoPopUP() {
-        waitForElementClickable(driver, LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP);
-        clickToElementByJS(driver, LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP);
+    public void closeInfoPopUP(String verifyLeadName) {
+        sleepInSecond(1);
+        clickToElement(driver,LeadPageUI.verifyLeadInfo.LEAD_NAME_VERIFY,verifyLeadName);
+        pressKeyToElement(driver,LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP,Keys.ESCAPE);
     }
 
     public void clearLeadNameSearchBox() {

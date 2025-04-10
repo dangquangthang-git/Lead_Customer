@@ -186,16 +186,16 @@ public class BasePage {
     }
 
     public static String getRandomName() {
-        String[] firstNames = {"Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Phan"};
-        String[] middleNames = {"Văn", "Thị", "Hữu", "Minh", "Đức", "Ngọc"};
-        String[] lastNames = {"An", "Bình", "Hạnh", "Khánh", "Tú", "Trang", "Quân"};
+        String[] firstNames = {"Nguyễn", "Trần", "Lê", "Phạm", "Hoàng", "Phan", "Đặng", "Trương"};
+        String[] middleNames = {"Văn", "Thị", "Hữu", "Minh", "Đức", "Ngọc", "Đức", "Hồng"};
+        String[] lastNames = {"An", "Bình", "Hạnh", "Khánh", "Tú", "Trang", "Quân", "Ánh", "Nguyệt"};
 
         Random random = new Random();
         String first = firstNames[random.nextInt(firstNames.length)];
         String middle = middleNames[random.nextInt(middleNames.length)];
         String last = lastNames[random.nextInt(lastNames.length)];
 
-        return first + " " + middle + " " + last;
+        return first + " " + middle + " " + last + " " + random.nextInt(9999);
     }
 
     public void sleepInSecond(long sleep) {
@@ -432,4 +432,5 @@ public class BasePage {
         }
         sleepInSecond(3);
     }
+
 }

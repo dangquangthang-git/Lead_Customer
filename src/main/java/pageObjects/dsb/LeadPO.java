@@ -210,19 +210,66 @@ public class LeadPO extends BasePage {
     }
 
     public void handleSaveDialog(String savePath) throws AWTException {
-
         Robot robot = new Robot();
         robot.setAutoDelay(1000);
         StringSelection selection = new StringSelection(savePath);
         Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
-
         robot.keyPress(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_V);
         robot.keyRelease(KeyEvent.VK_CONTROL);
-
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+    }
 
+    public void clickToEditIcon() {
+        sleepInSecond(1);
+        hoverToElement(driver, LeadPageUI.verifyLeadInfo.RECORD_01);
+        hoverToElement(driver, LeadPageUI.verifyLeadInfo.EDIT_ICON);
+        sleepInSecond(1);
+        clickToElement(driver, LeadPageUI.verifyLeadInfo.EDIT_ICON);
+        sleepInSecond(2);
+    }
+
+    public void verifyLeadName(String leadNameVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.LEAD_NAME_VERIFY, leadNameVerify), leadNameVerify);
+    }
+
+    public void verifyDOB(String dobVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.DOB_VERIFY, dobVerify), dobVerify);
+    }
+
+    public void verifyRepName(String repNameVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.DOB_VERIFY, repNameVerify), repNameVerify);
+    }
+
+    public void verifyMobilePhone(String phoneVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.MOBILEPHONE_VERIFY, phoneVerify), phoneVerify);
+    }
+
+    public void verifyEmail(String emailVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.EMAIL_VERIFY, emailVerify), emailVerify);
+    }
+
+    public void leadStatus(String statusVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.LEAD_STATUS_VERIFY, statusVerify), statusVerify);
+    }
+
+    public void verifyLeadID(String idVerify) {
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.LEAD_ID_VERIFY, idVerify), idVerify);
+    }
+
+    public String getLeadId() {
+        return getElementText(driver, LeadPageUI.filterSearch.TABLE_DATA_ID);
+    }
+
+    public void closeInfoPopUP() {
+        waitForElementClickable(driver, LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP);
+        clickToElementByJS(driver, LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP);
+    }
+
+    public void clearLeadNameSearchBox() {
+        waitForElementClickable(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
+        clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
     }
 }

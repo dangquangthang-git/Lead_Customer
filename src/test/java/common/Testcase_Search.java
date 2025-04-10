@@ -16,14 +16,15 @@ public class Testcase_Search extends BaseTest {
     @BeforeClass
     public void before() {
         leadPage = Testcase_Create_Individual_Lead.leadPage;
-        System.out.println(leadPage);
     }
 
     String leadInfo = "leadInfo.xlsx";
-    String saveFile="example.xlsx";
+    String saveFile = "example.xlsx";
     String leadInfoPath = GlobalConstants.PROJECT_PATH + File.separator + "src\\main\\resources\\uploadFiles" + File.separator + leadInfo;
     String successMessage = "Đã tải file lên thành công";
     String savePath = GlobalConstants.PROJECT_PATH + File.separator + "src\\main\\resources\\downloadFiles" + File.separator + saveFile;
+    public static String indiLeadId;
+    public static String orgaLeadId;
 
     @Test
     public void TC01_User_Search_Individual() {
@@ -31,6 +32,7 @@ public class Testcase_Search extends BaseTest {
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_NAME, staticVars.individualLeadData.fullName);
         leadPage.searchByAddress(staticVars.commonLeadData.address);
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_ADDRESS, staticVars.commonLeadData.address);
+        indiLeadId = leadPage.getLeadId();
     }
 
     @Test
@@ -39,6 +41,7 @@ public class Testcase_Search extends BaseTest {
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_NAME, staticVars.organizationLeadData.leadOrgaName);
         leadPage.searchByAddress(staticVars.commonLeadData.address);
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_ADDRESS, staticVars.commonLeadData.address);
+        orgaLeadId = leadPage.getLeadId();
     }
 
     @Test

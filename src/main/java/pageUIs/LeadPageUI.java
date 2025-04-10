@@ -7,6 +7,7 @@ public class LeadPageUI {
         public static final String TABLE_DATA_NAME = "xpath=//tr/td[@class='ivnd-table-cell'][2]";
         public static final String TABLE_DATA_ADDRESS = "xpath=//tr/td[@class='ivnd-table-cell'][4]";
         public static final String TABLE_DATA_TYPE = "xpath=//tr/td[@class='ivnd-table-cell'][3]";
+        public static final String TABLE_DATA_ID = "xpath=//tr/td[@class='ivnd-table-cell'][1]";
         public static final String TABLE_DATA_STATUS = "xpath=//tr/td[@class='ivnd-table-cell'][5]";
         public static final String CLEAR_LEAD_NAME = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
         public static final String CLEAR_LEAD_ADDRESS = "xpath=//span[@class='ivnd-input-clear-icon']//span[@aria-label='close-circle']//*[name()='svg']";
@@ -44,10 +45,22 @@ public class LeadPageUI {
         public static final String ADDRESS_SAVE_BUTTON = "xpath=//button[@type='submit']";
         public static final String PROVINCE_OPTION = "xpath=//div[text()='TP Hà Nội']";
         public static final String UPLOAD_BUTTON = "xpath=//span[contains(text(),'Tải lên')]";
-        public static final String DOWNLOAD_BUTTON="xpath=//span[contains(text(),'Tải file mẫu')]";
+        public static final String DOWNLOAD_BUTTON = "xpath=//span[contains(text(),'Tải file mẫu')]";
         public static final String INPUT_FILE = "xpath=//input[@type='file']";
         public static final String UPLOAD_SUBMIT = "xpath=//span[contains(text(),'Xác nhận')]";
         public static final String UPLOAD_SUCCESS_MESSAGE = "xpath=//span[contains(text(),'Đã tải file lên thành công')]";
+    }
+
+    public class verifyLeadInfo {
+        public static final String RECORD_01 = "xpath=//tbody/tr[2]/td[8]";
+        public static final String EDIT_ICON = "xpath=//span[@class='anticon anticon-edit']";
+        public static final String LEAD_NAME_VERIFY = "xpath=//div[@class='font-semibold'][contains(text(),'%s')]";
+        public static final String DOB_VERIFY = "xpath=//div[contains(text(),'%s')]";
+        public static final String MOBILEPHONE_VERIFY = "xpath=//div[contains(text(),'%s')]";
+        public static final String EMAIL_VERIFY = "xpath=//div[contains(text(),'%s')]";
+        public static final String LEAD_STATUS_VERIFY = "xpath=//div[contains(text(),'%s')]";
+        public static final String LEAD_ID_VERIFY = "xpath=//div[contains(text(),'%s')]";
+        public static final String ClOSE_INFO_POPUP="xpath=//span[@aria-label='close']//*[name()='svg']";
     }
 
     public static class individualInfo {

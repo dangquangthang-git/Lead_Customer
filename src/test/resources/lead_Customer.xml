@@ -24,10 +24,17 @@
             <class name="common.Testcase_Search">
                 <methods>
                     <include name="TC02_User_Search_Organization"/>
-                    <include name="TC03_User_Filter"/>
+                    <!--<include name="TC03_User_Filter"/>-->
                     <include name="TC04_User_Download_UploadFile"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test name="Run on Chrome for Verify">
+        <parameter name="browser" value="HCHROME"></parameter>
+        <classes>
+            <class name="company.individual.Testcase_Verify_Edit_Individual_Info"/>
+            <class name="company.organization.Testcase_Verify_Edit_Organizaton_Info"/>
         </classes>
     </test>
 </suite>

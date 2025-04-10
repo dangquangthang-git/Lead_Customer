@@ -19,7 +19,7 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
 
     @Test
     public void TC01_User_Verify_Organization_Info() {
-        leadPage.closeInfoPopUP(staticVars.individualLeadData.fullName);
+        leadPage.closeInfoPopUP();
         leadPage.clearLeadNameSearchBox();
         leadPage.searchByLeadName(staticVars.organizationLeadData.leadOrgaName);
         leadPage.clickToEditIcon();
@@ -29,7 +29,15 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
         leadPage.verifyEmail(staticVars.organizationLeadData.organizationEmail);
         leadPage.leadStatus("NEW");
         leadPage.verifyLeadID(orgaLeadId);
-        leadPage.closeInfoPopUP(staticVars.organizationLeadData.leadOrgaName);
+    }
+
+    @Test
+    public void TC02_User_Verify_Edit_Mission() {
+        leadPage.moveToMissionTab();
+        leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
+        leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
+
+
     }
 
     private LeadPO leadPage;

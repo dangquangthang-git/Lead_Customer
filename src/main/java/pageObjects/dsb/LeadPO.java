@@ -263,14 +263,30 @@ public class LeadPO extends BasePage {
         return getElementText(driver, LeadPageUI.filterSearch.TABLE_DATA_ID);
     }
 
-    public void closeInfoPopUP(String verifyLeadName) {
+    public void closeInfoPopUP() {
         sleepInSecond(1);
-        clickToElement(driver,LeadPageUI.verifyLeadInfo.LEAD_NAME_VERIFY,verifyLeadName);
-        pressKeyToElement(driver,LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP,Keys.ESCAPE);
+        clickToElement(driver, LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP);
+        pressKeyToElement(driver, LeadPageUI.verifyLeadInfo.ClOSE_INFO_POPUP, Keys.ESCAPE);
     }
 
     public void clearLeadNameSearchBox() {
         waitForElementClickable(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
         clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
+    }
+
+    public void moveToMissionTab() {
+        waitForElementVisible(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB);
+        clickToElement(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB);
+    }
+
+    public void verifyMissionName(String missionName) {
+        waitForElementVisible(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NAME_DETAIL, missionName);
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NAME_DETAIL, missionName), missionName);
+        System.out.println(getElementText(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NAME_DETAIL, missionName));
+    }
+
+    public void verifyMissionNote(String missionNote) {
+        waitForElementVisible(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NOTE_DETAIL, missionNote);
+        Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NOTE_DETAIL, missionNote), missionNote);
     }
 }

@@ -9,7 +9,6 @@ public class staticVars extends BasePage {
     }
 
     public static class commonLeadData {
-        public static String mobilePhone = getPhoneGenerate();
         public static final String address = "Quận Ba Đình, TP Hà Nội";
         public static final String leadSource = "Hội thảo";
         public static final String descryptionText = address;

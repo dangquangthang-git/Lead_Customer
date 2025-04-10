@@ -60,7 +60,14 @@ public class LeadPageUI {
         public static final String EMAIL_VERIFY = "xpath=//div[contains(text(),'%s')]";
         public static final String LEAD_STATUS_VERIFY = "xpath=//div[contains(text(),'%s')]";
         public static final String LEAD_ID_VERIFY = "xpath=//div[contains(text(),'%s')]";
-        public static final String ClOSE_INFO_POPUP="xpath=//span[@aria-label='close']//*[name()='svg']";
+        public static final String ClOSE_INFO_POPUP="xpath=//div[@class='w-full text-center uppercase font-bold text-xl']";
+        public static final String MISSION_TAB="xpath=//div[text()='Nhu cầu và nhiệm vụ']";
+        public static final String MISSION_TAB_NAME_DETAIL="xpath=//td[contains(text(),'%s')]";
+        public static final String MISSION_TAB_NOTE_DETAIL="xpath=//td[normalize-space()='%s']";
+
+
+
+
     }
 
     public static class individualInfo {

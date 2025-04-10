@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.dsb.LeadPO;
 import staticVariables.staticVars;
+
 import static common.Testcase_Search.indiLeadId;
 
 public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
@@ -25,5 +26,15 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
         leadPage.leadStatus("NEW");
         leadPage.verifyLeadID(indiLeadId);
     }
+
+    @Test
+    public void TC02_User_Verify_Edit_Mission() {
+        leadPage.moveToMissionTab();
+        leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
+        leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
+
+
+    }
+
     private LeadPO leadPage;
 }

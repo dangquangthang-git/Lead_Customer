@@ -29,6 +29,7 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
         leadPage.verifyEmail(staticVars.organizationLeadData.organizationEmail);
         leadPage.leadStatus("NEW");
         leadPage.verifyLeadID(orgaLeadId);
+        leadPage.closeInfoPopUP(staticVars.organizationLeadData.leadOrgaName);
     }
 
     private LeadPO leadPage;

@@ -34,6 +34,7 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
         leadPage.enterNewDOB(staticVars.editInfo.editDOB);
         leadPage.clickToSubmitChange("Thông tin cá nhân");
         leadPage.verifyLeadName(staticVars.editInfo.editLeadName);
+        System.out.println(staticVars.editInfo.editLeadName);
     }
 
     @Test

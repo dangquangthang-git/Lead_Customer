@@ -303,11 +303,14 @@ public class LeadPO extends BasePage {
     public void enterNewDOB(String editDOB) {
         waitForElementClickable(driver, LeadPageUI.editInfo.INDI_DOB_EDIT);
         sendkeyToElement(driver, LeadPageUI.editInfo.INDI_DOB_EDIT, editDOB);
+        pressKeyToElement(driver, LeadPageUI.editInfo.INDI_DOB_EDIT, Keys.ENTER,editDOB);
+        sleepInSecond(1);
     }
 
     public void clickToSubmitChange(String blockName) {
 //        waitForElementClickable(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
         sleepInSecond(1);
         clickToElementByJS(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
+        sleepInSecond(1);
     }
 }

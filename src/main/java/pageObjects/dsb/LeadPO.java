@@ -303,14 +303,32 @@ public class LeadPO extends BasePage {
     public void enterNewDOB(String editDOB) {
         waitForElementClickable(driver, LeadPageUI.editInfo.INDI_DOB_EDIT);
         sendkeyToElement(driver, LeadPageUI.editInfo.INDI_DOB_EDIT, editDOB);
-        pressKeyToElement(driver, LeadPageUI.editInfo.INDI_DOB_EDIT, Keys.ENTER,editDOB);
+        pressKeyToElement(driver, LeadPageUI.editInfo.INDI_DOB_EDIT, Keys.ENTER, editDOB);
         sleepInSecond(1);
     }
 
     public void clickToSubmitChange(String blockName) {
 //        waitForElementClickable(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
         sleepInSecond(1);
+        scrollToElement(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
         clickToElementByJS(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
         sleepInSecond(1);
+    }
+
+    public void enterNewPhone(String editPhone) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.MOBILEPHONE_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.MOBILEPHONE_EDIT, editPhone);
+        sleepInSecond(1);
+    }
+
+    public void enterNewEmail(String editEmail) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.EMAIL_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.EMAIL_EDIT, editEmail);
+        sleepInSecond(1);
+    }
+
+    public void enterNewRepName(String editRepName) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.ORGAN_REPNAME_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.ORGAN_REPNAME_EDIT, editRepName);
     }
 }

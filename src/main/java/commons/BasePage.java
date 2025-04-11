@@ -350,6 +350,10 @@ public class BasePage {
         new Actions(driver).scrollToElement(getElement(driver, locator)).build().perform();
     }
 
+    public void scrollToElement(WebDriver driver, String locator, String... resParameter) {
+        new Actions(driver).scrollToElement(getElement(driver, castParameter(locator, resParameter))).build().perform();
+    }
+
     public void waitForElementVisible(WebDriver driver, String locator) {
         new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT)).until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locator)));
     }

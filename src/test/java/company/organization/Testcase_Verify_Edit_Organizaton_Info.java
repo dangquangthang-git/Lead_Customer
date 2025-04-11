@@ -32,12 +32,28 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
     }
 
     @Test
-    public void TC02_User_Verify_Edit_Mission() {
+    public void TC02_User_Edit_Organization_Info() {
+        leadPage.clickToIconEditInfo("Thông tin cá nhân");
+        leadPage.enterNewLeadName(staticVars.editInfo.editOrgaName);
+        leadPage.enterNewRepName(staticVars.editInfo.editRepName);
+        leadPage.clickToSubmitChange("Thông tin cá nhân");
+        leadPage.verifyLeadName(staticVars.editInfo.editOrgaName);
+        System.out.println(staticVars.editInfo.editOrgaName);
+
+        leadPage.clickToIconEditInfo("Thông tin liên hệ");
+        leadPage.enterNewPhone(staticVars.editInfo.editOrgaPhone);
+        leadPage.enterNewEmail(staticVars.editInfo.editOrgaEmail);
+        leadPage.clickToSubmitChange("Thông tin liên hệ");
+    }
+
+    @Test
+    public void TC03_User_Verify_Edit_Mission() {
         leadPage.moveToMissionTab();
         leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
         leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
         leadPage.closeInfoPopUP();
     }
+
 
     private LeadPO leadPage;
 }

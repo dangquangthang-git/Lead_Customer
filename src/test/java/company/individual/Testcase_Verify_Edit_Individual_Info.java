@@ -35,6 +35,11 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
         leadPage.clickToSubmitChange("Thông tin cá nhân");
         leadPage.verifyLeadName(staticVars.editInfo.editLeadName);
         System.out.println(staticVars.editInfo.editLeadName);
+
+        leadPage.clickToIconEditInfo("Thông tin liên hệ");
+        leadPage.enterNewPhone(staticVars.editInfo.editPhone);
+        leadPage.enterNewEmail(staticVars.editInfo.editEmail);
+        leadPage.clickToSubmitChange("Thông tin liên hệ");
     }
 
     @Test

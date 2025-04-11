@@ -39,6 +39,12 @@ public class staticVars extends BasePage {
     public static class editInfo {
         public static final String editLeadName = getRandomName();
         public static final String editDOB = "22/04/1998";
+        public static final String editPhone = getPhoneGenerate();
+        public static final String editEmail = getEmailGenerate("editEmail");
+        public static final String editOrgaName = getCompanyNameGenerate();
+        public static final String editRepName = getRandomName();
+        public static final String editOrgaPhone = getPhoneGenerate();
+        public static final String editOrgaEmail = getEmailGenerate("editEmailCompany");
     }
 
 }

@@ -308,6 +308,6 @@ public class LeadPO extends BasePage {
     public void clickToSubmitChange(String blockName) {
 //        waitForElementClickable(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
         sleepInSecond(1);
-        clickToElement(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
+        clickToElementByJS(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
     }
 }

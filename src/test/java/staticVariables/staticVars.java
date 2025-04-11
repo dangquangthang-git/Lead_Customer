@@ -36,4 +36,9 @@ public class staticVars extends BasePage {
         public static String organMobilePhone = getPhoneGenerate();
     }
 
+    public static class editInfo {
+        public static final String editLeadName = getRandomName();
+        public static final String editDOB = "22/04/1998";
+    }
+
 }

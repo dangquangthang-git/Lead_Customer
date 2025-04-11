@@ -126,7 +126,6 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/lead_Customer.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
                     <!-- Argument -->
                     <!--suppress UnresolvedMavenProperty -->
                     <argLine>

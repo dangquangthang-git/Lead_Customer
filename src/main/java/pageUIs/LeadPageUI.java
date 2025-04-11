@@ -60,14 +60,11 @@ public class LeadPageUI {
         public static final String EMAIL_VERIFY = "xpath=//div[contains(text(),'%s')]";
         public static final String LEAD_STATUS_VERIFY = "xpath=//div[contains(text(),'%s')]";
         public static final String LEAD_ID_VERIFY = "xpath=//div[contains(text(),'%s')]";
-        public static final String ClOSE_INFO_POPUP="xpath=//div[@class='w-full text-center uppercase font-bold text-xl']";
-        public static final String MISSION_TAB="xpath=//div[text()='Nhu cầu và nhiệm vụ']";
-        public static final String MISSION_TAB_NAME_DETAIL="xpath=//td[contains(text(),'%s')]";
-        public static final String MISSION_TAB_NOTE_DETAIL="xpath=//td[normalize-space()='%s']";
-
-
-
-
+        public static final String ClOSE_INFO_POPUP = "xpath=//div[@class='w-full text-center uppercase font-bold text-xl']";
+        public static final String MISSION_TAB = "xpath=//div[text()='Nhu cầu và nhiệm vụ']";
+        public static final String MISSION_TAB_NAME_DETAIL = "xpath=//td[contains(text(),'%s')]";
+        public static final String MISSION_TAB_NOTE_DETAIL = "xpath=//td[normalize-space()='%s']";
+        public static final String EDIT_ICON_BLOCK = "xpath=//div[text()='%s']/parent::div/following-sibling::div";
     }
 
     public static class individualInfo {
@@ -76,11 +73,20 @@ public class LeadPageUI {
         public static final String MALE_GENDER_RADIO = "xpath=//span[normalize-space()='Nam']";
     }
 
+    public static class editInfo {
+        public static final String NAME_EDIT = "xpath=//div[@class='DetailInfo__Block-sc-ms262w-0 bIRBih']//div//div//input[@id='fullName']";
+        public static final String INDI_DOB_EDIT = "xpath=//input[@id='dateOfBirth']";
+        public static final String ORGAN_REPNAME_EDIT = "xpath=//input[@id='representative']";
+        public static final String MOBILEPHONE_EDIT = "xpath=//input[@id='mobilePhone']";
+        public static final String EMAIL_EDIT = "xpath=//input[@id='email']";
+        public static final String SUBMIT_CHANGE = "xpath=//div[text()='%s']/parent::div/parent::div/following-sibling::div//button[@class='ivnd-btn ivnd-btn-primary']";
+
+    }
+
     public static class organizationInfo {
         public static final String LEAD_ORGANAME_TEXTBOX = "xpath=//div[@class='Form__Block-sc-q08i0n-0 lckPld']//div//input[@id='fullName']";
         public static final String REPRESENTATIVE_TEXTBOX = "xpath=//input[@id='representative']";
     }
-
 
 }
 

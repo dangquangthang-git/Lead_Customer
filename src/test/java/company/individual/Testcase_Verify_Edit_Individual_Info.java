@@ -28,11 +28,23 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
     }
 
     @Test
-    public void TC02_User_Verify_Edit_Mission() {
+    public void TC02_User_Edit_Individual_Info() {
+        leadPage.clickToIconEditInfo("Thông tin cá nhân");
+        leadPage.enterNewLeadName(staticVars.editInfo.editLeadName);
+        leadPage.enterNewDOB(staticVars.editInfo.editDOB);
+        leadPage.clickToSubmitChange("Thông tin cá nhân");
+        leadPage.verifyLeadName(staticVars.editInfo.editLeadName);
+    }
+
+    @Test
+    public void TC03_User_Verify_Mission() {
         leadPage.moveToMissionTab();
         leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
         leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
+    }
 
+    @Test
+    public void TC04_User_Edit_Mission() {
 
     }
 

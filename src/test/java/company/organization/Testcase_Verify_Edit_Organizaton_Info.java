@@ -36,8 +36,7 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
         leadPage.moveToMissionTab();
         leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
         leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
-
-
+        leadPage.closeInfoPopUP();
     }
 
     private LeadPO leadPage;

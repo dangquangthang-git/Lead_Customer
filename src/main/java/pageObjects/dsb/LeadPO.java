@@ -289,4 +289,25 @@ public class LeadPO extends BasePage {
         waitForElementVisible(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NOTE_DETAIL, missionNote);
         Assert.assertEquals(getElementText(driver, LeadPageUI.verifyLeadInfo.MISSION_TAB_NOTE_DETAIL, missionNote), missionNote);
     }
+
+    public void clickToIconEditInfo(String blockName) {
+        waitForElementClickable(driver, LeadPageUI.verifyLeadInfo.EDIT_ICON_BLOCK, blockName);
+        clickToElement(driver, LeadPageUI.verifyLeadInfo.EDIT_ICON_BLOCK, blockName);
+    }
+
+    public void enterNewLeadName(String editLeadName) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.NAME_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.NAME_EDIT, editLeadName);
+    }
+
+    public void enterNewDOB(String editDOB) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.INDI_DOB_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.INDI_DOB_EDIT, editDOB);
+    }
+
+    public void clickToSubmitChange(String blockName) {
+//        waitForElementClickable(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
+        sleepInSecond(1);
+        clickToElement(driver, LeadPageUI.editInfo.SUBMIT_CHANGE, blockName);
+    }
 }

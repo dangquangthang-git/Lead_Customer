@@ -206,6 +206,14 @@ public class BasePage {
         }
     }
 
+    public void clearTextbox(WebDriver driver, String locator) {
+        getElement(driver, locator).clear();
+    }
+
+    public void clearTextbox(WebDriver driver, String locator, String... resParameter) {
+        getElement(driver, locator, resParameter).clear();
+    }
+
     protected WebElement getElement(WebDriver driver, String locator) {
         return driver.findElement(getByLocator(locator));
     }

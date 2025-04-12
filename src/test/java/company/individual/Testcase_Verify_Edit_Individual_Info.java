@@ -51,7 +51,12 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
 
     @Test
     public void TC04_User_Edit_Mission() {
-
+        leadPage.clickToMissionTabEditIcon();
+        leadPage.enterNewMissionName(staticVars.editInfo.editMissionName);
+        leadPage.enterNewMissionNote(staticVars.editInfo.editMissionNote);
+        leadPage.clickToSubmitMissionEdit();
+        leadPage.verifyMissionName(staticVars.editInfo.editMissionName);
+        leadPage.verifyMissionNote(staticVars.editInfo.editMissionNote);
     }
 
     private LeadPO leadPage;

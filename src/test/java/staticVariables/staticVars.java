@@ -45,6 +45,8 @@ public class staticVars extends BasePage {
         public static final String editRepName = getRandomName();
         public static final String editOrgaPhone = getPhoneGenerate();
         public static final String editOrgaEmail = getEmailGenerate("editEmailCompany");
+        public static final String editMissionName = generateTaskName();
+        public static final String editMissionNote = "Chat";
     }
 
 }

@@ -223,7 +223,6 @@ public class LeadPO extends BasePage {
     }
 
     public void clickToEditIcon() {
-        sleepInSecond(1);
         hoverToElement(driver, LeadPageUI.verifyLeadInfo.RECORD_01);
         hoverToElement(driver, LeadPageUI.verifyLeadInfo.EDIT_ICON);
         sleepInSecond(1);
@@ -331,4 +330,29 @@ public class LeadPO extends BasePage {
         waitForElementClickable(driver, LeadPageUI.editInfo.ORGAN_REPNAME_EDIT);
         sendkeyToElement(driver, LeadPageUI.editInfo.ORGAN_REPNAME_EDIT, editRepName);
     }
+
+    public void clickToMissionTabEditIcon() {
+        waitForElementClickable(driver,LeadPageUI.editInfo.MISSION_EDIT_ICON);
+        clickToElement(driver, LeadPageUI.editInfo.MISSION_EDIT_ICON);
+        sleepInSecond(1);
+    }
+
+    public void enterNewMissionName(String editMissionName) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.MISSION_NAME_EDIT);
+        clearTextbox(driver, LeadPageUI.editInfo.MISSION_NAME_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.MISSION_NAME_EDIT, editMissionName);
+    }
+
+    public void enterNewMissionNote(String editMissionNote) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.MISSION_NOTE_EDIT);
+        clearTextbox(driver, LeadPageUI.editInfo.MISSION_NOTE_EDIT);
+        sendkeyToElement(driver, LeadPageUI.editInfo.MISSION_NOTE_EDIT, editMissionNote);
+        sleepInSecond(1);
+    }
+
+    public void clickToSubmitMissionEdit() {
+        waitForElementClickable(driver, LeadPageUI.editInfo.MISSION_SUBMIT_EDIT);
+        clickToElement(driver, LeadPageUI.editInfo.MISSION_SUBMIT_EDIT);
+    }
+
 }

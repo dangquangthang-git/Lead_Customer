@@ -51,6 +51,16 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
         leadPage.moveToMissionTab();
         leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
         leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
+    }
+
+    @Test
+    public void TC04_User_Edit_Mission() {
+        leadPage.clickToMissionTabEditIcon();
+        leadPage.enterNewMissionName(staticVars.editInfo.editMissionName);
+        leadPage.enterNewMissionNote(staticVars.editInfo.editMissionNote);
+        leadPage.clickToSubmitMissionEdit();
+        leadPage.verifyMissionName(staticVars.editInfo.editMissionName);
+        leadPage.verifyMissionNote(staticVars.editInfo.editMissionNote);
         leadPage.closeInfoPopUP();
     }
 

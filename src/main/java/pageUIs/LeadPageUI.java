@@ -80,7 +80,10 @@ public class LeadPageUI {
         public static final String MOBILEPHONE_EDIT = "xpath=//input[@id='mobilePhone']";
         public static final String EMAIL_EDIT = "xpath=//input[@id='email']";
         public static final String SUBMIT_CHANGE = "xpath=//div[text()='%s']/parent::div/parent::div/following-sibling::div//button[@class='ivnd-btn ivnd-btn-primary']";
-
+        public static final String MISSION_EDIT_ICON = "xpath=//span[@aria-label='form']//*[name()='svg']";
+        public static final String MISSION_NAME_EDIT = "xpath=//input[@id='taskName']";
+        public static final String MISSION_NOTE_EDIT = "xpath=//textarea[@id='description']";
+        public static final String MISSION_SUBMIT_EDIT = "xpath=//button[@type='submit']";
     }
 
     public static class organizationInfo {

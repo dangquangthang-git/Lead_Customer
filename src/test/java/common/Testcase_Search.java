@@ -46,6 +46,7 @@ public class Testcase_Search extends BaseTest {
 
     @Test
     public void TC03_User_Filter() {
+//        leadPage.clearLeadNameSearchBox();
         leadPage.clickToFilterIcon();
         leadPage.checkToIndividualAndNew();
         leadPage.clickToFilterIcon();

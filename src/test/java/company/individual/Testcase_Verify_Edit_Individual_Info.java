@@ -59,5 +59,15 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
         leadPage.verifyMissionNote(staticVars.editInfo.editMissionNote);
     }
 
+    @Test
+    public void TC05_User_Add_Mission() {
+        leadPage.clickToAddMission();
+        leadPage.enterAddMissionName(staticVars.addMission.addMissionName);
+        leadPage.enterAddMissionTime(staticVars.addMission.addMissionTime);
+        leadPage.enterAddMissionInteractChannel();
+        leadPage.enterAddMissionNote(staticVars.addMission.addMissionNote);
+        leadPage.clickToAddMissionSubmit();
+    }
+
     private LeadPO leadPage;
 }

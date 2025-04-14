@@ -193,6 +193,16 @@ public class LeadPO extends BasePage {
         clickToElement(driver, LeadPageUI.filterSearch.APPLY_FILTER);
     }
 
+    public void checkToClearFilter() {
+        sleepInSecond(1);
+        waitForElementClickable(driver, LeadPageUI.filterSearch.ORGA_CHECKBOX);
+        clickToElement(driver, LeadPageUI.filterSearch.ORGA_CHECKBOX);
+        clickToElement(driver, LeadPageUI.filterSearch.CONNECTED_STATUS);
+        clickToElement(driver, LeadPageUI.filterSearch.OPEN_DEAL_STATUS);
+        sleepInSecond(1);
+        clickToElement(driver, LeadPageUI.filterSearch.APPLY_FILTER);
+    }
+
     public void handleFile(String filePath, String savePath) throws AWTException {
         clickToElement(driver, LeadPageUI.commonLeadInfo.UPLOAD_BUTTON);
         sleepInSecond(1);
@@ -271,6 +281,8 @@ public class LeadPO extends BasePage {
     public void clearLeadNameSearchBox() {
         waitForElementClickable(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
         clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
+//        waitForElementClickable(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME);
+//        getElement(driver, LeadPageUI.filterSearch.SEARCH_BY_NAME).clear();
     }
 
     public void moveToMissionTab() {
@@ -332,7 +344,7 @@ public class LeadPO extends BasePage {
     }
 
     public void clickToMissionTabEditIcon() {
-        waitForElementClickable(driver,LeadPageUI.editInfo.MISSION_EDIT_ICON);
+        waitForElementClickable(driver, LeadPageUI.editInfo.MISSION_EDIT_ICON);
         clickToElement(driver, LeadPageUI.editInfo.MISSION_EDIT_ICON);
         sleepInSecond(1);
     }
@@ -355,4 +367,37 @@ public class LeadPO extends BasePage {
         clickToElement(driver, LeadPageUI.editInfo.MISSION_SUBMIT_EDIT);
     }
 
+    public void enterAddMissionName(String addMissionName) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.ADD_MISSION_NAME);
+        clearTextbox(driver, LeadPageUI.editInfo.ADD_MISSION_NAME);
+        sendkeyToElement(driver, LeadPageUI.editInfo.ADD_MISSION_NAME, addMissionName);
+    }
+
+    public void clickToAddMission() {
+//        waitForElementClickable(driver, LeadPageUI.editInfo.ADD_MISSION);
+        sleepInSecond(2);
+        clickToElement(driver, LeadPageUI.editInfo.ADD_MISSION);
+    }
+
+    public void enterAddMissionTime(String missionTime) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.ADD_MISSION_TIME);
+        sendkeyToElement(driver, LeadPageUI.editInfo.ADD_MISSION_TIME, missionTime);
+        pressKeyToElement(driver, LeadPageUI.editInfo.ADD_MISSION_TIME, Keys.ENTER);
+    }
+
+    public void enterAddMissionNote(String missionNote) {
+        waitForElementClickable(driver, LeadPageUI.editInfo.ADD_MISSION_DESCRYPTION);
+        sendkeyToElement(driver, LeadPageUI.editInfo.ADD_MISSION_DESCRYPTION, missionNote);
+        sleepInSecond(1);
+    }
+
+    public void clickToAddMissionSubmit() {
+        waitForElementVisible(driver, LeadPageUI.editInfo.ADD_MISSION_SUBMIT);
+        clickToElement(driver, LeadPageUI.editInfo.ADD_MISSION_SUBMIT);
+    }
+
+    public void enterAddMissionInteractChannel() {
+        clickToElement(driver, LeadPageUI.editInfo.ADD_MISSION_INTERACT_CHANNEL);
+        clickToElement(driver, LeadPageUI.editInfo.ADD_INTERACT_CHANNEL_OPTION);
+    }
 }

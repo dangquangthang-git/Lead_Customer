@@ -84,6 +84,13 @@ public class LeadPageUI {
         public static final String MISSION_NAME_EDIT = "xpath=//input[@id='taskName']";
         public static final String MISSION_NOTE_EDIT = "xpath=//textarea[@id='description']";
         public static final String MISSION_SUBMIT_EDIT = "xpath=//button[@type='submit']";
+        public static final String ADD_MISSION = "xpath=//div[@role='button']";
+        public static final String ADD_MISSION_NAME = "xpath=//input[@id='taskName']";
+        public static final String ADD_MISSION_TIME = "xpath=//input[@id='startTime']";
+        public static final String ADD_MISSION_INTERACT_CHANNEL = "xpath=//input[@id='interactChannel']";
+        public static final String ADD_MISSION_DESCRYPTION = "xpath=//textarea[@id='note']";
+        public static final String ADD_MISSION_SUBMIT = "xpath=//button[@type='submmit']";
+        public static final String ADD_INTERACT_CHANNEL_OPTION = "xpath=//div[@title='Email']";
     }
 
     public static class organizationInfo {

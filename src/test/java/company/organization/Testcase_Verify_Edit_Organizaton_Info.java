@@ -61,9 +61,19 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
         leadPage.clickToSubmitMissionEdit();
         leadPage.verifyMissionName(staticVars.editInfo.editMissionName);
         leadPage.verifyMissionNote(staticVars.editInfo.editMissionNote);
-        leadPage.closeInfoPopUP();
     }
 
+    @Test
+    public void TC05_User_Add_Mission() {
+        leadPage.clickToAddMission();
+        leadPage.enterAddMissionName(staticVars.addMission.addMissionName);
+        leadPage.enterAddMissionTime(staticVars.addMission.addMissionTime);
+        leadPage.enterAddMissionInteractChannel();
+        leadPage.enterAddMissionNote(staticVars.addMission.addMissionNote);
+        leadPage.clickToAddMissionSubmit();
+        leadPage.closeInfoPopUP();
+        leadPage.clearLeadNameSearchBox();
+    }
 
     private LeadPO leadPage;
 }

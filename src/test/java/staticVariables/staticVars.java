@@ -49,4 +49,10 @@ public class staticVars extends BasePage {
         public static final String editMissionNote = "Chat";
     }
 
+    public static class addMission {
+        public static final String addMissionName = generateTaskName();
+        public static final String addMissionNote = "Meeting";
+        public static final String addMissionTime = getTomorrow() + " 05:00:00";
+    }
+
 }

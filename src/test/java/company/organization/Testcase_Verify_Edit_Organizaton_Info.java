@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 import pageObjects.dsb.LeadPO;
 import staticVariables.staticVars;
 
-import static common.Testcase_Search.indiLeadId;
-import static common.Testcase_Search.orgaLeadId;
+import static common.Testcase_Search_Filter.orgaLeadId;
 
 public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
     @BeforeClass

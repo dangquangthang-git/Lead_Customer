@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import pageObjects.dsb.LeadPO;
 import staticVariables.staticVars;
 
-import static common.Testcase_Search.indiLeadId;
+import static common.Testcase_Search_Filter.indiLeadId;
 
 public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
     @BeforeClass

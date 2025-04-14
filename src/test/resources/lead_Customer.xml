@@ -10,7 +10,7 @@
         <classes>
             <class name="common.Testcase_Login"/>
             <class name="company.individual.Testcase_Create_Individual_Lead"/>
-            <class name="common.Testcase_Search">
+            <class name="common.Testcase_Search_Filter">
                 <methods>
                     <include name="TC01_User_Search_Individual"/>
                 </methods>
@@ -21,7 +21,7 @@
         <parameter name="browser" value="HCHROME"></parameter>
         <classes>
             <class name="company.organization.Testcase_Create_Organization_Lead"/>
-            <class name="common.Testcase_Search">
+            <class name="common.Testcase_Search_Filter">
                 <methods>
                     <include name="TC02_User_Search_Organization"/>
                     <!--<include name="TC03_User_Filter"/>-->
@@ -35,11 +35,11 @@
         <classes>
             <class name="company.individual.Testcase_Verify_Edit_Individual_Info"/>
             <class name="company.organization.Testcase_Verify_Edit_Organizaton_Info"/>
-<!--            <class name="common.Testcase_Search">-->
-<!--                <methods>-->
-<!--                    <include name="TC03_User_Filter"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="common.Testcase_Search_Filter">
+                <methods>
+                    <include name="TC03_User_Filter"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

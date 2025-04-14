@@ -12,7 +12,7 @@ import staticVariables.staticVars;
 import java.awt.*;
 import java.io.File;
 
-public class Testcase_Search extends BaseTest {
+public class Testcase_Search_Filter extends BaseTest {
     @BeforeClass
     public void before() {
         leadPage = Testcase_Create_Individual_Lead.leadPage;

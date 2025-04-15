@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Automation Testing" verbose="1">
-    <!--    <listeners>-->
-    <!--        <listener class-name="commons.MethodListener"></listener>-->
-    <!--        <listener class-name="reportConfigs.ExtentListener"></listener>-->
-    <!--    </listeners>-->
+    <listeners>
+        <listener class-name="commons.MethodListener"></listener>
+        <listener class-name="reportConfigs.ExtentListener"></listener>
+    </listeners>
     <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>
     <test name="Run on Chrome for Individual">
         <parameter name="browser" value="HCHROME"></parameter>

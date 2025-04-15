@@ -1,10 +1,14 @@
 package company.individual;
 
+import com.aventstack.extentreports.Status;
 import commons.BaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.dsb.LeadPO;
+import reportConfigs.ExtentManager;
 import staticVariables.staticVars;
+
+import java.lang.reflect.Method;
 
 import static common.Testcase_Search_Filter.indiLeadId;
 
@@ -16,14 +20,23 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
     }
 
     @Test
-    public void TC01_User_Verify_Individual_Info() {
+    public void TC01_User_Verify_Individual_Info(Method method) {
+        ExtentManager.startTest(method.getName(), "Verify individual info");
+        ExtentManager.getTest().log(Status.INFO, "STEP01:search by Lead name " + staticVars.individualLeadData.fullName);
         leadPage.searchByLeadName(staticVars.individualLeadData.fullName);
+        ExtentManager.getTest().log(Status.INFO, "STEP02:click to edit icon");
         leadPage.clickToEditIcon();
+        ExtentManager.getTest().log(Status.INFO, "STEP03:verify Lead name " + staticVars.individualLeadData.fullName);
         leadPage.verifyLeadName(staticVars.individualLeadData.fullName);
+        ExtentManager.getTest().log(Status.INFO, "STEP04:verify Lead DOB " + staticVars.individualLeadData.dateOfBirth);
         leadPage.verifyDOB(staticVars.individualLeadData.dateOfBirth);
+        ExtentManager.getTest().log(Status.INFO, "STEP05:verify Lead mobile phone " + staticVars.individualLeadData.indiMobilePhone);
         leadPage.verifyMobilePhone(staticVars.individualLeadData.indiMobilePhone);
+        ExtentManager.getTest().log(Status.INFO, "STEP06:verify Lead mobile phone " + staticVars.individualLeadData.individualEmail);
         leadPage.verifyEmail(staticVars.individualLeadData.individualEmail);
+        ExtentManager.getTest().log(Status.INFO, "STEP07:verify Lead status: New");
         leadPage.leadStatus("NEW");
+        ExtentManager.getTest().log(Status.INFO, "STEP08:verify individual Lead Id " + indiLeadId);
         leadPage.verifyLeadID(indiLeadId);
     }
 

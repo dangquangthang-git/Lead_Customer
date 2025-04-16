@@ -41,34 +41,56 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
     }
 
     @Test
-    public void TC02_User_Edit_Individual_Info() {
+    public void TC02_User_Edit_Individual_Info(Method method) {
+        ExtentManager.startTest(method.getName(), "Edit individual info");
+        ExtentManager.getTest().log(Status.INFO, "Click to icon edit");
         leadPage.clickToIconEditInfo("Thông tin cá nhân");
+        ExtentManager.getTest().log(Status.INFO, "enter new Lead name box " + staticVars.editInfo.editLeadName);
         leadPage.enterNewLeadName(staticVars.editInfo.editLeadName);
+        ExtentManager.getTest().log(Status.INFO, "enter new Lead DOB box " + staticVars.editInfo.editDOB);
         leadPage.enterNewDOB(staticVars.editInfo.editDOB);
+        ExtentManager.getTest().log(Status.INFO, "click to submit change");
         leadPage.clickToSubmitChange("Thông tin cá nhân");
+        ExtentManager.getTest().log(Status.INFO, "verify new lead name");
         leadPage.verifyLeadName(staticVars.editInfo.editLeadName);
         System.out.println(staticVars.editInfo.editLeadName);
 
+        ExtentManager.getTest().log(Status.INFO, "Click to icon edit");
         leadPage.clickToIconEditInfo("Thông tin liên hệ");
+        ExtentManager.getTest().log(Status.INFO, "enter new Lead phone textbox " + staticVars.editInfo.editPhone);
         leadPage.enterNewPhone(staticVars.editInfo.editPhone);
+        ExtentManager.getTest().log(Status.INFO, "enter new Lead email textbox " + staticVars.editInfo.editEmail);
         leadPage.enterNewEmail(staticVars.editInfo.editEmail);
+        ExtentManager.getTest().log(Status.INFO, "click to submit change");
         leadPage.clickToSubmitChange("Thông tin liên hệ");
     }
 
     @Test
-    public void TC03_User_Verify_Mission() {
+    public void TC03_User_Verify_Mission(Method method) {
+        ExtentManager.startTest(method.getName(), "Verify mission");
+        ExtentManager.getTest().log(Status.INFO, "STEP01: move to mission tab");
         leadPage.moveToMissionTab();
+        ExtentManager.getTest().log(Status.INFO, "Verify mission name " + staticVars.commonLeadData.missionName);
         leadPage.verifyMissionName(staticVars.commonLeadData.missionName);
+        ExtentManager.getTest().log(Status.INFO, "Verify mission note " + staticVars.commonLeadData.missionNote);
         leadPage.verifyMissionNote(staticVars.commonLeadData.missionNote);
     }
 
     @Test
-    public void TC04_User_Edit_Mission() {
+    public void TC04_User_Edit_Mission(Method method) {
+        ExtentManager.startTest(method.getName(), "Edit mission");
+        ExtentManager.getTest().log(Status.INFO, "STEP01: click to mission tab edit icon");
         leadPage.clickToMissionTabEditIcon();
+        ExtentManager.getTest().log(Status.INFO, "enter new mission name " + staticVars.editInfo.editMissionName);
         leadPage.enterNewMissionName(staticVars.editInfo.editMissionName);
+        ExtentManager.getTest().log(Status.INFO, "enter new mission name " + staticVars.editInfo.editMissionNote);
         leadPage.enterNewMissionNote(staticVars.editInfo.editMissionNote);
+
+        ExtentManager.getTest().log(Status.INFO, "Click to icon submit edit");
         leadPage.clickToSubmitMissionEdit();
+        ExtentManager.getTest().log(Status.INFO, "Verify mission name " + staticVars.editInfo.editMissionName);
         leadPage.verifyMissionName(staticVars.editInfo.editMissionName);
+        ExtentManager.getTest().log(Status.INFO, "Verify mission note " + staticVars.editInfo.editMissionNote);
         leadPage.verifyMissionNote(staticVars.editInfo.editMissionNote);
     }
 

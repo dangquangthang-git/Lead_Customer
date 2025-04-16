@@ -35,11 +35,11 @@ public class Testcase_Search_Filter extends BaseTest {
         ExtentManager.startTest(method.getName(), "Search individual lead");
         ExtentManager.getTest().log(Status.INFO, "STEP01: search by Lead name: " + staticVars.individualLeadData.fullName);
         leadPage.searchByLeadName(staticVars.individualLeadData.fullName);
-        ExtentManager.getTest().log(Status.INFO, "STEP02: verify Lead name:");
+        ExtentManager.getTest().log(Status.INFO, "STEP02: verify Lead name");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_NAME, staticVars.individualLeadData.fullName);
         ExtentManager.getTest().log(Status.INFO, "STEP03: search by Lead address: " + staticVars.commonLeadData.address);
         leadPage.searchByAddress(staticVars.commonLeadData.address);
-        ExtentManager.getTest().log(Status.INFO, "STEP04: verify Lead address:");
+        ExtentManager.getTest().log(Status.INFO, "STEP04: verify Lead address");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_ADDRESS, staticVars.commonLeadData.address);
         indiLeadId = leadPage.getLeadId();
     }
@@ -49,11 +49,11 @@ public class Testcase_Search_Filter extends BaseTest {
         ExtentManager.startTest(method.getName(), "Search organization lead");
         ExtentManager.getTest().log(Status.INFO, "STEP01: search by Lead name: " + staticVars.organizationLeadData.leadOrgaName);
         leadPage.searchByLeadName(staticVars.organizationLeadData.leadOrgaName);
-        ExtentManager.getTest().log(Status.INFO, "STEP02: verify Lead name:");
+        ExtentManager.getTest().log(Status.INFO, "STEP02: verify Lead name");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_NAME, staticVars.organizationLeadData.leadOrgaName);
         ExtentManager.getTest().log(Status.INFO, "STEP03: search by Lead address: " + staticVars.commonLeadData.address);
         leadPage.searchByAddress(staticVars.commonLeadData.address);
-        ExtentManager.getTest().log(Status.INFO, "STEP04: verify Lead address:");
+        ExtentManager.getTest().log(Status.INFO, "STEP04: verify Lead address");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_ADDRESS, staticVars.commonLeadData.address);
         orgaLeadId = leadPage.getLeadId();
     }

@@ -2,7 +2,7 @@
 
 ## 1. Truy cập hệ thống
 - Mở trình duyệt và truy cập địa chỉ hệ thống DSB.
-📌 Lưu ý: Hệ thống cần kết nối vpn để truy cập
+- 📌 Lưu ý: Hệ thống cần kết nối vpn để truy cập
 
 ## 2. Đăng nhập
 - Nhập thông tin tài khoản (username & password).

@@ -18,8 +18,13 @@ import java.lang.reflect.Method;
 public class Testcase_Create_Individual_Lead extends BaseTest {
     @BeforeClass
     public void before() {
-        driver = Testcase_Login.driver;
+        this.driver = Testcase_Login.sharedriver;
         homePage = PageGenerator.getHomePage(driver);
+//        leadPage = homePage.moveToTabLead();
+//        if (leadPage == null) {
+//            throw new IllegalStateException("leadPage is null. Cannot proceed.");
+//        }
+//        System.out.println(leadPage);
     }
 
     @Test

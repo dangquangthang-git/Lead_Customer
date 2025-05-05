@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BaseTest {
-    protected WebDriver driver;
+    protected static WebDriver driver;
 
     public WebDriver getDriver() {
         return driver;
@@ -31,6 +31,10 @@ public class BaseTest {
                 break;
             case HCHROME:
                 ChromeOptions options = new ChromeOptions();
+//                options.addArguments("--headless"); // Chạy không giao diện
+//                options.addArguments("--disable-gpu"); // Hữu ích cho môi trường Windows
+//                options.addArguments("--window-size=1920,1080"); // Tùy chọn nhưng nên có
+
                 options.addArguments("--disable-notifications");
                 options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
                 options.addArguments("--disable-infobars");

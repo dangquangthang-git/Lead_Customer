@@ -27,8 +27,11 @@ public class ExtentListener extends BaseTest implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-
+        if (getTest() == null || !getTest().getModel().getName().equals(iTestResult.getMethod().getMethodName())) {
+            ExtentManager.startTest(iTestResult.getMethod().getMethodName(),"Executing test");
+        }
     }
+
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {

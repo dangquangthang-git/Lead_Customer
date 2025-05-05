@@ -321,6 +321,14 @@ public class BasePage {
         return getElement(driver, locator).isSelected();
     }
 
+    public boolean isElementPresent(WebDriver driver, String locator) {
+        try {
+            return getListElementNumber(driver,locator) > 0;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public boolean isElementSelected(WebDriver driver, String locator, String... resParameter) {
         return getElement(driver, castParameter(locator, resParameter)).isSelected();
     }

@@ -20,6 +20,7 @@ public class Testcase_Search_Filter extends BaseTest {
     @BeforeClass
     public void before() {
         leadPage = Testcase_Create_Individual_Lead.leadPage;
+        System.out.println(leadPage);
     }
 
     String leadInfo = "leadInfo.xlsx";

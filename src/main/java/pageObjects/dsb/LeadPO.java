@@ -31,8 +31,7 @@ public class LeadPO extends BasePage {
         waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS);
         sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS, leadAddres);
         sleepInSecond(3);
-        clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS);
-        sleepInSecond(1);
+
     }
 
     public void verifyResult(String column, String fieldResult) {
@@ -167,10 +166,19 @@ public class LeadPO extends BasePage {
     }
 
     public void clickToFilterIcon() {
+        boolean shouldProceed = true;
+        if (isElementPresent(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS)) {
+            WebElement clearBtn = getElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS);
+            if (clearBtn.isDisplayed()) {
+                clearBtn.click();
+                sleepInSecond(1);
+            }
+        }
         waitForElementVisible(driver, LeadPageUI.filterSearch.FILTER_ICON);
         clickToElement(driver, LeadPageUI.filterSearch.FILTER_ICON);
         sleepInSecond(1);
     }
+
 
     public void checkToIndividualAndNew() {
         waitForElementClickable(driver, LeadPageUI.filterSearch.INDIVIDUAL_CHECKBOX);
@@ -230,6 +238,7 @@ public class LeadPO extends BasePage {
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(new StringSelection(""), null);
     }
 
     public void clickToEditIcon() {

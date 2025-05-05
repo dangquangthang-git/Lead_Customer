@@ -1,14 +1,19 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Automation Testing" verbose="1">
+<suite name="Automation Testing" verbose="1" parallel="false" preserve-order="true">
     <listeners>
         <listener class-name="commons.MethodListener"></listener>
         <listener class-name="reportConfigs.ExtentListener"></listener>
     </listeners>
-    <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>
+    <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>C:\Users\thang.dangquang\AppData\Local\IntelliJProjects\Lead_Customer\src\main\resources\downloadFiles\example.xlsx
+    <test name="Login Setup">
+        <parameter name="browser" value="HCHROME" />
+        <classes>
+            <class name="common.Testcase_Login" />
+        </classes>
+    </test>
     <test name="Run on Chrome for Individual">
         <parameter name="browser" value="HCHROME"></parameter>
         <classes>
-            <class name="common.Testcase_Login"/>
             <class name="company.individual.Testcase_Create_Individual_Lead"/>
             <class name="common.Testcase_Search_Filter">
                 <methods>
@@ -16,6 +21,7 @@
                 </methods>
             </class>
         </classes>
+
     </test>
     <test name="Run on Chrome for Organization">
         <parameter name="browser" value="HCHROME"></parameter>

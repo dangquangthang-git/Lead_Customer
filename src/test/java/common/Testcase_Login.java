@@ -16,15 +16,15 @@ import staticVariables.staticVars;
 import java.lang.reflect.Method;
 
 public class Testcase_Login extends BaseTest {
-    public static WebDriver driver;
+    public static WebDriver sharedriver;
     String browserName;
 
     @Parameters({"browser", "url"})
     @BeforeTest
     public void before(String browserName, String url) {
-        driver = getBrowserDriver(browserName, url);
+        sharedriver = getBrowserDriver(browserName, url);
         this.browserName = browserName;
-        loginPage = PageGenerator.getLoginPage(driver);
+        loginPage = PageGenerator.getLoginPage(sharedriver);
     }
 
     @Test

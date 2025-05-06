@@ -27,7 +27,7 @@ public class LeadPO extends BasePage {
 
     public void searchByAddress(String leadAddres) {
         clickToElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_NAME);
-        sleepInSecond(1);
+//        sleepInSecond(1);
         waitForElementVisible(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS);
         sendkeyToElement(driver, LeadPageUI.filterSearch.SEARCH_BY_ADDRESS, leadAddres);
         sleepInSecond(3);
@@ -166,14 +166,7 @@ public class LeadPO extends BasePage {
     }
 
     public void clickToFilterIcon() {
-        boolean shouldProceed = true;
-        if (isElementPresent(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS)) {
-            WebElement clearBtn = getElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS);
-            if (clearBtn.isDisplayed()) {
-                clearBtn.click();
-                sleepInSecond(1);
-            }
-        }
+
         waitForElementVisible(driver, LeadPageUI.filterSearch.FILTER_ICON);
         clickToElement(driver, LeadPageUI.filterSearch.FILTER_ICON);
         sleepInSecond(1);
@@ -408,5 +401,11 @@ public class LeadPO extends BasePage {
     public void enterAddMissionInteractChannel() {
         clickToElement(driver, LeadPageUI.editInfo.ADD_MISSION_INTERACT_CHANNEL);
         clickToElement(driver, LeadPageUI.editInfo.ADD_INTERACT_CHANNEL_OPTION);
+    }
+
+    public void clearLeadAddress() {
+        WebElement clearBtn = getElement(driver, LeadPageUI.filterSearch.CLEAR_LEAD_ADDRESS);
+        clearBtn.click();
+        sleepInSecond(1);
     }
 }

@@ -42,6 +42,7 @@ public class Testcase_Search_Filter extends BaseTest {
         leadPage.searchByAddress(staticVars.commonLeadData.address);
         ExtentManager.getTest().log(Status.INFO, "STEP04: verify Lead address");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_ADDRESS, staticVars.commonLeadData.address);
+        leadPage.clearLeadAddress();
         indiLeadId = leadPage.getLeadId();
     }
 
@@ -56,6 +57,7 @@ public class Testcase_Search_Filter extends BaseTest {
         leadPage.searchByAddress(staticVars.commonLeadData.address);
         ExtentManager.getTest().log(Status.INFO, "STEP04: verify Lead address");
         leadPage.verifyResult(LeadPageUI.filterSearch.TABLE_DATA_ADDRESS, staticVars.commonLeadData.address);
+        leadPage.clearLeadAddress();
         orgaLeadId = leadPage.getLeadId();
     }
 

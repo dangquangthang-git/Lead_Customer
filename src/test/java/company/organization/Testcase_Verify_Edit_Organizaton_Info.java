@@ -21,7 +21,7 @@ public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {
         System.out.println(leadPage);
     }
 
-    @Test
+    @Test()
     public void TC01_User_Verify_Organization_Info(Method method) {
         ExtentManager.startTest(method.getName(), "Verify organization info");
         ExtentManager.getTest().log(Status.INFO, "STEP01:close info pop up");

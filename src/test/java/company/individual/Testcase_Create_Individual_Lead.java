@@ -20,11 +20,6 @@ public class Testcase_Create_Individual_Lead extends BaseTest {
     public void before() {
         this.driver = Testcase_Login.sharedriver;
         homePage = PageGenerator.getHomePage(driver);
-//        leadPage = homePage.moveToTabLead();
-//        if (leadPage == null) {
-//            throw new IllegalStateException("leadPage is null. Cannot proceed.");
-//        }
-//        System.out.println(leadPage);
     }
 
     @Test

@@ -19,7 +19,7 @@ public class Testcase_Verify_Edit_Individual_Info extends BaseTest {
         System.out.println(leadPage);
     }
 
-    @Test
+    @Test(retryAnalyzer = reportConfigs.RetryAnalyzer.class)
     public void TC01_User_Verify_Individual_Info(Method method) {
         ExtentManager.startTest(method.getName(), "Verify individual info");
         ExtentManager.getTest().log(Status.INFO, "STEP01:search by Lead name " + staticVars.individualLeadData.fullName);

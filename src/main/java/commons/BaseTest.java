@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxDriverService;
 import org.openqa.selenium.firefox.GeckoDriverService;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.time.Duration;
@@ -14,6 +15,12 @@ import java.util.Map;
 
 public class BaseTest {
     protected static WebDriver driver;
+
+    @BeforeSuite
+    public void setupLogging() {
+        System.setProperty("org.apache.logging.log4j.simplelog.StatusLogger.level", "WARN");
+        System.setProperty("log4j2.loggerContextFactory", "org.apache.logging.log4j.core.impl.Log4jContextFactory");
+    }
 
     public WebDriver getDriver() {
         return driver;

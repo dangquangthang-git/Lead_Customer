@@ -21,7 +21,7 @@ public class Testcase_Create_Organization_Lead extends BaseTest {
         System.out.println(leadPage);
     }
 
-    @Test(retryAnalyzer = reportConfigs.RetryAnalyzer.class)
+    @Test
     public void TC01_User_Create_Lead_Organization(Method method) {
         ExtentManager.startTest(method.getName(), "Create individual lead");
         ExtentManager.getTest().log(Status.INFO, "STEP01: open create Lead popup");

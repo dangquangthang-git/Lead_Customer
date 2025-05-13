@@ -3,12 +3,13 @@
     <listeners>
         <listener class-name="commons.MethodListener"></listener>
         <listener class-name="reportConfigs.ExtentListener"></listener>
+        <listener class-name="reportConfigs.AnnotationTransformer"/>
     </listeners>
-    <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>C:\Users\thang.dangquang\AppData\Local\IntelliJProjects\Lead_Customer\src\main\resources\downloadFiles\example.xlsx
+    <parameter name="url" value="https://id-uat.ipas.com.vn/login?&amp;redirect-app=dsb-web"></parameter>
     <test name="Login Setup">
-        <parameter name="browser" value="HCHROME" />
+        <parameter name="browser" value="HCHROME"/>
         <classes>
-            <class name="common.Testcase_Login" />
+            <class name="common.Testcase_Login"/>
         </classes>
     </test>
     <test name="Run on Chrome for Individual">
@@ -20,6 +21,7 @@
                     <include name="TC01_User_Search_Individual"/>
                 </methods>
             </class>
+
         </classes>
 
     </test>

@@ -38,13 +38,15 @@ public class BaseTest {
                 break;
             case HCHROME:
                 ChromeOptions options = new ChromeOptions();
-//                options.addArguments("--headless"); // Chạy không giao diện
-//                options.addArguments("--disable-gpu"); // Hữu ích cho môi trường Windows
-//                options.addArguments("--window-size=1920,1080"); // Tùy chọn nhưng nên có
-
+                options.addArguments("--headless"); // Hoặc "--headless" nếu chưa dùng Chrome 109+
+                options.addArguments("--disable-gpu");
+                options.addArguments("--window-size=1920,1080");
+                options.addArguments("--no-sandbox");
+                options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-notifications");
-                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
                 options.addArguments("--disable-infobars");
+                options.addArguments("--remote-allow-origins=*");
+                options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
                 Map<String, Object> prefs = new HashMap<>();
                 prefs.put("credentials_enable_service", false);  // Tắt trình quản lý mật khẩu
                 prefs.put("profile.password_manager_enabled", false);  // Tắt popup lưu mật khẩu

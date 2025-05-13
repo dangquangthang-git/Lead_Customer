@@ -1,4 +1,4 @@
-package reportConfigs; // hoặc commons, listeners
+package reportConfigs;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

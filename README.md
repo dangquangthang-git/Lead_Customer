@@ -57,7 +57,10 @@
 │   │   │   ├── commons/
 │   │   │   │   ├── BasePage.java
 │   │   │   │   ├── BaseTest.java
-│   │   │   │   └── ...
+│   │   │   │   ├── BrowserList.java
+│   │   │   │   ├── GlobalConstants.java
+│   │   │   │   ├── MethodListener.java
+│   │   │   │   └── VerificationFailures.java
 │   │   │   ├── pageObjects/
 │   │   │   │   └── dsb/
 │   │   │   │       └── LoginPO.java

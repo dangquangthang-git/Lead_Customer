@@ -40,5 +40,63 @@
 
 ---
 # Cấu trúc thư mục
-<pre> ├── .gitignore ├── pom.xml ├── README.md │ ├── .idea/ │ ├── htmlExtent/ │ └── ExtentReport.html │ ├── src/ │ ├── main/ │ │ ├── java/ │ │ │ ├── commons/ │ │ │ │ ├── BasePage.java │ │ │ │ ├── BaseTest.java │ │ │ │ ├── BrowserList.java │ │ │ │ ├── GlobalConstants.java │ │ │ │ ├── MethodListener.java │ │ │ │ └── VerificationFailures.java │ │ │ │ │ │ │ ├── pageObjects/ │ │ │ │ ├── PageGenerator.java │ │ │ │ └── dsb/ │ │ │ │ ├── HomePO.java │ │ │ │ ├── LeadPO.java │ │ │ │ └── LoginPO.java │ │ │ │ │ │ │ ├── pageUIs/ │ │ │ │ ├── HomePageUI.java │ │ │ │ ├── LeadPageUI.java │ │ │ │ └── LoginPageUI.java │ │ │ │ │ │ │ ├── reportConfigs/ │ │ │ │ ├── AnnotationTransformer.java │ │ │ │ ├── ExtentListener.java │ │ │ │ ├── ExtentManager.java │ │ │ │ └── RetryAnalyzer.java │ │ │ │ │ │ │ └── utilities/ │ │ │ └── FakerConfig.java │ │ │ │ │ └── resources/ │ │ ├── downloadFiles/ │ │ └── uploadFiles/ │ │ └── leadInfo.xlsx │ │ │ └── test/ │ ├── java/ │ │ ├── common/ │ │ │ ├── Testcase_Login.java │ │ │ └── Testcase_Search_Filter.java │ │ │ │ │ ├── company/ │ │ │ ├── individual/ │ │ │ │ ├── Testcase_Create_Individual_Lead.java │ │ │ │ └── Testcase_Verify_Edit_Individual_Info.java │ │ │ └── organization/ │ │ │ ├── Testcase_Create_Organization_Lead.java │ │ │ └── Testcase_Verify_Edit_Organizaton_Info.java │ │ │ │ │ └── staticVariables/ │ │ └── staticVars.java │ │ │ └── resources/ │ └── lead_Customer.xml </pre>
+📦 project-root
+├── .gitignore
+├── pom.xml
+├── README.md
+│
+├── .idea/
+│
+├── htmlExtent/
+│   └── ExtentReport.html
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── commons/
+│   │   │   │   ├── BasePage.java
+│   │   │   │   ├── BaseTest.java
+│   │   │   │   ├── BrowserList.java
+│   │   │   │   ├── GlobalConstants.java
+│   │   │   │   ├── MethodListener.java
+│   │   │   │   └── VerificationFailures.java
+│   │   │   ├── pageObjects/
+│   │   │   │   ├── PageGenerator.java
+│   │   │   │   └── dsb/
+│   │   │   │       ├── HomePO.java
+│   │   │   │       ├── LeadPO.java
+│   │   │   │       └── LoginPO.java
+│   │   │   ├── pageUIs/
+│   │   │   │   ├── HomePageUI.java
+│   │   │   │   ├── LeadPageUI.java
+│   │   │   │   └── LoginPageUI.java
+│   │   │   ├── reportConfigs/
+│   │   │   │   ├── AnnotationTransformer.java
+│   │   │   │   ├── ExtentListener.java
+│   │   │   │   ├── ExtentManager.java
+│   │   │   │   └── RetryAnalyzer.java
+│   │   │   └── utilities/
+│   │   │       └── FakerConfig.java
+│   │   └── resources/
+│   │       ├── downloadFiles/
+│   │       └── uploadFiles/
+│   │           └── leadInfo.xlsx
+│
+ ── test/
+    ├── java/
+    │   ├── common/
+    │   │   ├── Testcase_Login.java
+    │   │   └── Testcase_Search_Filter.java
+    │   ├── company/
+    │   │   ├── individual/
+    │   │   │   ├── Testcase_Create_Individual_Lead.java
+    │   │   │   └── Testcase_Verify_Edit_Individual_Info.java
+    │   │   └── organization/
+    │   │       ├── Testcase_Create_Organization_Lead.java
+    │   │       └── Testcase_Verify_Edit_Organizaton_Info.java
+    │   └── staticVariables/
+    │       └── staticVars.java
+    └── resources/
+        └── lead_Customer.xml
+
 > 📌 Lưu ý: Mọi thao tác phải tuân thủ quyền truy cập và phân quyền người dùng trên hệ thống.

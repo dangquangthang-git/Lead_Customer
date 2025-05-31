@@ -141,6 +141,7 @@ public class LeadPO extends BasePage {
     }
 
     public void selectInteractChannel() {
+  
         clickToElement(driver, LeadPageUI.commonLeadInfo.INTERACT_CHANNEL_PARENT);
         clickToElement(driver, LeadPageUI.commonLeadInfo.INTERACT_CHANNEL_OPTION);
     }

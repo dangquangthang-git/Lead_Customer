@@ -13,7 +13,7 @@ public class staticVars extends BasePage {
         public static final String leadSource = "Hội thảo";
         public static final String descryptionText = address;
         public static final String missionName = generateTaskName();
-        public static final String missionTime = getTomorrow() + " 10:00:00";
+        public static final String missionTime = getTomorrow();
         public static final String interactOption = "Call";
         public static final String missionNote = interactOption;
         public static final String province = "TP Hà Nội";

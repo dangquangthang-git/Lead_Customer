@@ -8,10 +8,7 @@ import org.testng.annotations.Test;
 import pageObjects.dsb.LeadPO;
 import reportConfigs.ExtentManager;
 import staticVariables.staticVars;
-
 import java.lang.reflect.Method;
-
-import static common.Testcase_Search_Filter.indiLeadId;
 import static common.Testcase_Search_Filter.orgaLeadId;
 
 public class Testcase_Verify_Edit_Organizaton_Info extends BaseTest {

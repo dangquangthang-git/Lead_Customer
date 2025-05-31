@@ -9,7 +9,6 @@ public class AnnotationTransformer implements IAnnotationTransformer {
 
     @Override
     public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
-        // Nếu method chưa có RetryAnalyzer thì gán vào
         if (annotation.getRetryAnalyzerClass() == null) {
             annotation.setRetryAnalyzer(RetryAnalyzer.class);
         }

@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxDriverService;
-import org.openqa.selenium.firefox.GeckoDriverService;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
@@ -38,9 +36,9 @@ public class BaseTest {
                 break;
             case HCHROME:
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless"); // Hoặc "--headless" nếu chưa dùng Chrome 109+
-                options.addArguments("--disable-gpu");
-                options.addArguments("--window-size=1920,1080");
+//                options.addArguments("--headless=new");
+//                options.addArguments("--disable-gpu");
+//                options.addArguments("--window-size=1920,1080");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-notifications");
